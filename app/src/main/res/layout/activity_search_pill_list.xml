@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search_pill_list">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="1440px"
+        android:layout_height="564px"
+        android:background="#1F2A83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="268px"
+            android:layout_height="160px"
+            android:background="@drawable/edit_round"
+            android:text="색깔"
+            app:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/btn_under_48px"
+            app:layout_constraintEnd_toStartOf="@+id/right_58px_3"
+            app:layout_constraintTop_toTopOf="@+id/btn_up_536px"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="268px"
+            android:layout_height="160px"
+            android:background="@drawable/edit_round"
+            android:text="모양"
+            app:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/btn_under_48px"
+            app:layout_constraintEnd_toStartOf="@+id/btn_right_351px2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_left_821px2"
+            app:layout_constraintTop_toTopOf="@+id/btn_up_536px"
+            app:strokeColor="#FFFFFF" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btn_left_821px2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="821px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btn_right_351px2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="351px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_58px_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="58px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_58px_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="58px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btn_up_536px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="356px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btn_under_48px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="48px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/search_up_308px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="128px" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="1322px"
+            android:layout_height="180px"
+            android:background="@drawable/edit_round"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/right_58px_3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left_58px_3"
+            app:layout_constraintTop_toTopOf="@+id/search_up_308px" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="1440px"
+        android:layout_height="569dp"
+        android:layout_marginTop="1dp"
+        android:background="#E5E5E5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <ScrollView
+            android:layout_width="1440px"
+            android:layout_height="570dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/s_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

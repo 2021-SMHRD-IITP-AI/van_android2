@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".pill_danger">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="1440px"
+        android:layout_height="260px"
+        android:background="#1F2A83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="1440px"
+        android:layout_height="2100px"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1900px"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_round"
+            android:paddingBottom="50dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="58px" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="58px" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="125px" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="74px"
+                android:text="사용법"
+                android:textSize="50px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toTopOf="@+id/guideline22" />
+
+            <TextView
+                android:id="@+id/pd_tv1"
+                android:layout_width="1324px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="성인은 1회 1정, 1일 1회 복용합니다. 이 약은 장용정이므로 충분한 물과 함께 식전에 복용할 수 있습니다.  "
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="보관법"
+                android:textSize="50px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/pd_tv1" />
+
+            <TextView
+                android:id="@+id/pd_tv2"
+                android:layout_width="1324px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="습기를 피해 실온에서 보관하십시오. 어린이의 손이 닿지 않는 곳에 보관하십시오. "
+                app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="주의사항"
+                android:textSize="50px"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/pd_tv2" />
+
+            <TextView
+                android:id="@+id/pd_tv3"
+                android:layout_width="1324px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="이 약 또는 다른 살리실산제제, 진통제, 소염제, 항류마티스제에 대한 과민증 환자,?소화성궤양,?아스피린천식 또는 경험자,?혈우병, 심한 간장애, 심한 신장애, 심한 심기능부전, 출혈경향, 일주일 동안 메토트렉세이트 15밀리그람(15 mg/주) 이상의 용량을 병용 투여하는 환자,?임신 3기에 해당하는 임부는 복용하지 마십시오.?임신 1기와 2기에는 반드시 필요한 경우가 아니라면??이 약을 복용하지 마십시오. 이 약을 사용하기 전에 신장애,?심혈관 순환기능이상(신혈관 질환, 울혈성 심부전, 체액감소, 큰 수술, 패혈증 또는 주요 출혈사고 등), 간장애, 심기능 이상, 기관지천식,?수술전의 환자,?3세 이하의 유아, 고령자,?포도당-6-인산염 탈수소효소(G6PD)결핍 환자, 레이증후군, 14세 이하의 수두 또는 인플루엔자 감염 환자,?통풍 환자는?의사 또는 약사와 상의하십시오. 출혈의 위험이 있으므로 수술(치과수술 포함)을 하는 경우에는 의사에게 이 약을 복용하고 있음을 알리십시오. 이 약의 장용피막을 파손하지 않도록 유의하십시오.  "
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="주의사항 경고"
+                android:textSize="50px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/pd_tv3" />
+
+            <TextView
+                android:id="@+id/pd_tv4"
+                android:layout_width="1324px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="성인은 1회 1정, 1일 1회 복용합니다. 이 약은 장용정이므로 충분한 물과 함께 식전에 복용할 수 있습니다.  매일 세잔 이상 정기적 음주자가 이 약 또는 다른 해열진통제를 복용할 때는 의사 또는 약사와 상의하십시오. 위장출혈을 일으킬 수 있습니다. "
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="상호작용"
+                android:textSize="50px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/pd_tv4" />
+
+            <TextView
+                android:id="@+id/pd_tv5"
+                android:layout_width="1324px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="다른 비스테로이드성 소염진통제 및 살리실산 제제, 일주일 동안 메토트렉세이트 15밀리그람(15mg/주) 이상의 용량은 이 약과 병용 투여 시 출혈이 증가되거나 신기능이 감소될 수 있으므로 함께 사용하지 않습니다. 항응고제, 이부프로펜, 나프록센 등 일부 비스테로이드성 소염진통제, 혈전용해제, 다른 혈소판응집억제제, 지혈제, 당뇨병치료제(인슐린제제, 톨부타미드 등), 요산배설촉진제(벤즈브로마론, 프로베네시드), 티아짓계 이뇨제, 리튬제제, 선택적 세포토닌 재흡수 억제제, 디곡신, 전신 작용 부신피질호르몬 제제(애디슨병 대체요법용 히드로코티손 제외), 안지오텐신 전환 효소 억제제, 발프로산 제제를 복용하는 사람은 의사 또는 약사와 상의하십시오. 알칼리제제(예: 탄산수소나트륨, 탄산마그네슘) 또는 습기가 차기 쉬운 제제와 함께 섞지 마십시오. 알코올과 병용 투여 시 위장관 점막 손상이 증가하고, 이 약과 알코올의 상승효과로 인해 출혈시간이 연장될 수 있습니다. "
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/guideline21"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline20"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

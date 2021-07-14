@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.egeoyag" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Egeoyag" >
+<!--android:networkSecurityConfig="@xml/network_config"-->
+
+        <activity android:name=".favorites" />
+        <activity android:name=".family" />
+        <activity android:name=".user_record_modify" />
+        <activity android:name=".user_record" />
+        <activity android:name=".user_record_list" />
+        <activity android:name=".user_info" />
+        <activity android:name=".my_page" />
+        <activity android:name=".pill_danger" />
+        <activity android:name=".pill_rivew" />
+        <activity android:name=".search_pill_explanation" />
+        <activity android:name=".search_pill_list" />
+        <activity android:name=".main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".splash" />
+        <activity android:name=".reset_password" />
+        <activity android:name=".find_email_completed" />
+        <activity android:name=".subscription_information_check_pw" />
+        <activity android:name=".subscription_information_check_email" />
+        <activity android:name=".subscription_information" />
+        <activity android:name=".join" />
+        <activity android:name=".login" />
+    </application>
+
+</manifest>

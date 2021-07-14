@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".search_pill_explanation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="1440px"
+        android:layout_height="260px"
+        android:background="#1F2A83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="1440px"
+        android:layout_height="571dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="1440px"
+            android:layout_height="571dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/spe_l2"
+                android:layout_width="1440px"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_round"
+                android:paddingBottom="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scrollView2"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:id="@+id/spe_p_img"
+                    android:layout_width="1440px"
+                    android:layout_height="700px"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/spe_p_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/spe_p_1"
+                    android:layout_width="300dp"
+                    android:layout_height="33dp"
+                    android:text="페라트라정2.5밀리그램(레트로졸)"
+                    android:textColor="#000000"
+                    android:textSize="70px"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toTopOf="@+id/name_up_128px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/left_58px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="58px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/right58px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="58px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/name_right1011px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="1011px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/name_up_128px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="828px" />
+
+                <TextView
+                    android:id="@+id/spe_p_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="(주)글락소스미스클라인"
+                    android:textColor="#B4B2B2"
+                    android:textSize="50px"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toTopOf="@+id/name_up_128px2" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/name_up_128px2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="971px" />
+
+                <TextView
+                    android:id="@+id/spe_p_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="74px"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="전문의약품전문의약품"
+                    android:textColor="#B4B2B2"
+                    android:textSize="50px"
+                    app:layout_constraintStart_toEndOf="@+id/spe_p_2"
+                    app:layout_constraintTop_toTopOf="@+id/name_up_128px2" />
+
+                <TextView
+                    android:id="@+id/spe_p_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="148px"
+                    android:background="@drawable/btn_round"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="기타의 소화기관용약"
+                    android:textSize="40px"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toTopOf="@+id/eff_up_448px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/eff_up_448px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="1148px" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="74px"
+                    android:text="효능"
+                    android:textColor="#707070"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toTopOf="@+id/bujakyoung_up_694px" />
+
+                <TextView
+                    android:id="@+id/spe_p_5"
+                    android:layout_width="1324px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="이 약은 심근경색, 뇌경색, 불안정형 협심증에서 혈전 생성 억제와?관상동맥 우회술(CABG) 또는 경피경관 관상동맥 성형술(PTCA) 후 혈전 생성 억제와 고위험군환자(허혈성 심장질환의 가족력, 고혈압, 고콜레스테롤혈증, 비만, 당뇨 등 복합적 위험인자를 가진 환자)에서 심혈관계 위험성 감소에 사용합니다."
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="부작용"
+                    android:textColor="#707070"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/spe_p_5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bujakyoung_up_694px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="1394px" />
+
+                <TextView
+                    android:id="@+id/spe_p_6"
+                    android:layout_width="1324px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="쇽 증상(예: 호흡곤란, 전신조홍, 혈관부종, 두드러기), 천식발작, 과민증(홍반, 간지러움, 코막힘, 심장-호흡기 장애, 때때로 발진, 부종, 두드러기, 비염양 증상, 결막염), 드물게 리엘증후군(독성표피괴사용해), 스티븐스-존슨증후군(피부점막안증후군), 박탈성피부염, 재생불량성빈혈, 빈혈, 백혈구감소, 혈소판감소, 혈소판기능 저하(출혈시간의 지연), 귀에서 소리가 남, 귀 먹음, 어지러움, 두통, 흥분, 드물게 간장애, 매우 드물게 일시적인 간손상, 신장애, 급성신부전, 과호흡, 대사성 산증, 과도한 체온강하, 허탈, 사지냉각 등이 나타나는 경우 즉시 복용을 중지하고 의사 또는 약사와 상의하십시오. 식욕부진, 가슴쓰림, 위통, 구역, 구토 등이 나타날 수 있습니다. "
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/right58px"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="용법용량"
+                    android:textColor="#707070"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/spe_p_6" />
+
+                <TextView
+                    android:id="@+id/spe_p_7"
+                    android:layout_width="1324px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="성인은 1회 1정, 1일 1회 복용합니다. 이 약은 장용정이므로 충분한 물과 함께 식전에 복용할 수 있습니다.  "
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/right58px"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="1324px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/right58px"
+                    app:layout_constraintStart_toStartOf="@+id/left_58px"
+                    app:layout_constraintTop_toBottomOf="@+id/spe_p_7">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:text="주의사항"
+                        android:textColor="#707070"
+                        android:textSize="50px"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/spe_btn_danger"
+                        android:layout_width="74px"
+                        android:layout_height="74px"
+                        android:layout_marginEnd="17dp"
+
+                        android:layout_marginRight="17dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/indigo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageButton
+                    android:id="@+id/spe_btn_record"
+                    android:layout_width="148px"
+                    android:layout_height="148px"
+                    app:layout_constraintBottom_toTopOf="@+id/name_up_128px2"
+                    app:layout_constraintEnd_toStartOf="@+id/right58px"
+                    app:layout_constraintTop_toTopOf="@+id/name_up_128px"
+                    app:srcCompat="@drawable/turquoise" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:id="@+id/spe_l"
+        android:layout_width="1440px"
+        android:layout_height="2000px"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
