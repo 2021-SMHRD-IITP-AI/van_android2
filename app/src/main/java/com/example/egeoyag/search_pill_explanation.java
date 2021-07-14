@@ -121,18 +121,18 @@ public class search_pill_explanation extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
 
 
-        Log.d("값 확인", arr[0]+arr2[0]);
+
         String url = "http://59.0.249.28:3000/Drugs";
 //        String url = "http://172.17.96.1:3000/Drugs";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {//server 로부터 데이터를 받아온 곳
-                Log.d("값 확인 2",arr[0]+arr2[0]);
+
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
-                    Log.v("값 확인 3",arr[0]+arr2[0]);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -142,7 +142,7 @@ public class search_pill_explanation extends AppCompatActivity {
         }, new Response.ErrorListener() {//server 통신시 error 발생 하며 오는 곳
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("값 확인 3",arr[0]+arr2[0]);
+
                 error.printStackTrace(); //로그에 에러가 난 것을 표시
 
             }
@@ -161,8 +161,15 @@ public class search_pill_explanation extends AppCompatActivity {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Log.d("값 확인 5",arr[0]+arr2[0]);
+
                 Map<String, String> params = new HashMap<String, String>();
+
+                if(arr2[0].equals("")){
+                    arr2 = new String[3];
+                    arr2[0] = "널";
+                    arr2[1] = "널";
+                    arr2[2] = "널";
+                }
 
                 params.put("drug_name",arr[0]);
                 params.put("drug_num",spe_p_num);
@@ -214,13 +221,13 @@ public class search_pill_explanation extends AppCompatActivity {
                 String spe_p_5 = "정보가 부족합니다";//효능(이 약은 심근 경색, 뇌 경색)
                 String spe_p_6 = "정보가 부족합니다";//부작용(쇽 증상 예 호흡곤란,...)
                 String spe_p_7 = "정보가 부족합니다";//용법용량(성인은 1회 1정 ~
+
                 if(!arr2[0].equals("")){
                     spe_p_5 = arr2[0];//효능(이 약은 심근 경색, 뇌 경색)
                     spe_p_6 = arr2[2];//부작용(쇽 증상 예 호흡곤란,...)
                     spe_p_7 = arr2[1];//용법용량(성인은 1회 1정 ~
                 }
 
-                img_pill = arr[2];
 
                 pillExDTO dto = new pillExDTO(spe_p_1, spe_p_2, spe_p_3, spe_p_4, spe_p_5, spe_p_6, spe_p_7, spe_p_img);
 
