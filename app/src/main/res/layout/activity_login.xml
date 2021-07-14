@@ -4,6 +4,251 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintCircleRadius="112px"
     tools:context=".login">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="398px" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_58px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="58px" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="58px" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="316px"
+        android:layout_height="316px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toTopOf="@+id/top_guide"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_title_1053"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="779px" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요."
+        android:textColor="#000000"
+        android:textSize="70px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toTopOf="@+id/top_title_1053" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이거약입니다."
+        android:textColor="#000000"
+        android:textSize="70px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="1324px" />
+
+    <TextView
+        android:id="@+id/e_mail텍스트"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="E-mail"
+        android:textSize="45px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toTopOf="@+id/top_email" />
+
+    <TextView
+        android:id="@+id/비밀번호_텍스트"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="비밀번호"
+        android:textSize="45px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toTopOf="@+id/top_email" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:gravity="right"
+        android:inputType="textPassword"
+        android:textSize="45px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="right"
+        android:inputType="textEmailAddress"
+        android:textSize="45px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/right_58px"
+        app:layout_constraintTop_toTopOf="@+id/top_email" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_title_1598"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="455dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_subtitle_1053"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="1053px" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:text="서비스 이용을 위해 로그인 또는 회원가입을 해주세요."
+        android:textSize="40px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toTopOf="@+id/top_subtitle_1053" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="97px" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="190px"
+        android:background="#1F2A83"
+        android:text="로그인"
+        app:backgroundTint="#1F2A83"
+        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cb_outo_login"
+        android:layout_width="0dp"
+        android:layout_height="58px"
+        android:layout_marginStart="35px"
+        android:layout_marginLeft="4dp"
+        android:text="자동로그인"
+        android:textSize="30px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="1679px" />
+
+    <CheckBox
+        android:id="@+id/cb_email"
+        android:layout_width="wrap_content"
+        android:layout_height="58px"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:text="이메일기억하기"
+        android:textSize="30px"
+        app:layout_constraintStart_toEndOf="@+id/cb_outo_login"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="270px" />
+
+    <TextView
+        android:id="@+id/tv_find_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이메일찾기"
+        android:textSize="35px"
+        app:layout_constraintBottom_toTopOf="@+id/찾기_가이드_아래"
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/찾기_가이드_아래"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="386px" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="270px" />
+
+    <TextView
+        android:id="@+id/tv_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="35px"
+        app:layout_constraintBottom_toTopOf="@+id/찾기_가이드_아래"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17" />
+
+    <TextView
+        android:id="@+id/tv_find_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호찾기"
+        android:textSize="35px"
+        app:layout_constraintBottom_toTopOf="@+id/찾기_가이드_아래"
+        app:layout_constraintEnd_toStartOf="@+id/tv_join"
+        app:layout_constraintStart_toEndOf="@+id/tv_find_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
