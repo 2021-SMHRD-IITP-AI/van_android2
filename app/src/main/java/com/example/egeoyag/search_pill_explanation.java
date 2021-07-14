@@ -111,6 +111,7 @@ public class search_pill_explanation extends AppCompatActivity {
                 intent.putExtra("intent_p_company", arr[1]);
                 intent.putExtra("intent_p_otcetc", arr[4]);
                 intent.putExtra("intent_p_group", arr[3]);
+                intent.putExtra("intent_p_img", arr[2]);
 
                 sendRequest(); //서버로 약 정보 보내주기
 
