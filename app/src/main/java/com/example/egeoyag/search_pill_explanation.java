@@ -94,6 +94,8 @@ public class search_pill_explanation extends AppCompatActivity {
 
                 intent.putExtra("intent_p_num", spe_p_num);
 
+
+
                 startActivity(intent);
 
             }
@@ -105,6 +107,10 @@ public class search_pill_explanation extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), user_record.class);
 
                 intent.putExtra("intent_p_num", spe_p_num);
+                intent.putExtra("intent_p_name", arr[0]);
+                intent.putExtra("intent_p_company", arr[1]);
+                intent.putExtra("intent_p_otcetc", arr[4]);
+                intent.putExtra("intent_p_group", arr[3]);
 
                 sendRequest(); //서버로 약 정보 보내주기
 
