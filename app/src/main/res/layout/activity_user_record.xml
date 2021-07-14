@@ -46,15 +46,14 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="448px"
-                    android:layout_height="254px"
-                    android:layout_marginTop="64dp"
+                    android:id="@+id/ur_p_img"
+                    android:layout_width="1440px"
+                    android:layout_height="701px"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[3]" />
-
+                    tools:srcCompat="@tools:sample/avatars" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.Guideline

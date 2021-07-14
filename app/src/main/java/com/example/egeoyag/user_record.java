@@ -4,13 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -28,7 +35,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -41,12 +52,15 @@ public class user_record extends AppCompatActivity {
     private String dnum= "199303109";
     private String p_g = "현우님제발그만..";
     private String mysy = "나의증사아아앙아";
-    private String data1, data2,dataA ,dataB, timeData, dateall;
+    private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
+    private ImageView ur_p_img;
     int minday,data3,data4;
     String recordmytime ;
 
+    Bitmap bitmap;
+
     Button btn_send;
-    TextView p_n, p_c, jun, bun, nae, date1, date2, mytime,daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
+    TextView   p_n, p_c, jun, bun, nae, date1, date2, mytime,daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
     TextView minus_day;
     int cnt1, cnt2, cnt3, cnt4, cnt5;
     private RequestQueue queue; //요청하는 개체
@@ -87,6 +101,37 @@ public class user_record extends AppCompatActivity {
 
         btn_send = findViewById(R.id.btn_send);
 
+
+        Intent intent = getIntent();
+        String p_name = intent.getStringExtra("intent_p_name");
+        String p_company = intent.getStringExtra("intent_p_company");
+        String p_otcetc = intent.getStringExtra("intent_p_otcetc");
+        String p_group = intent.getStringExtra("intent_p_group");
+        String p_img = intent.getStringExtra("intent_p_img");
+        String p_num = intent.getStringExtra("intent_p_num");
+
+        p_img_link = p_img;
+
+        p_n.setText(p_name);
+        p_c.setText(p_company);
+        jun.setText(p_otcetc);
+        bun.setText(p_group);
+
+
+        user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
+
+
+
+
+
+
+
+
+
+
+
+
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +161,7 @@ public class user_record extends AppCompatActivity {
                 // String p_weight = weight.getText().toString();
 
 
-                 sendRequest();
+                // sendRequest();
 
                 //   Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
 
@@ -502,4 +547,39 @@ public class user_record extends AppCompatActivity {
 
     };
 
+    private class DownloadFilesTask extends AsyncTask {
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            try {
+                URL url = new URL(p_img_link+"");
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                bitmap = BitmapFactory.decodeStream(con.getInputStream());
+
+                Message message = myHandler.obtainMessage();
+                message.obj = bitmap;
+                myHandler.sendMessage(message);
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+    }
+    private Handler myHandler = new Handler(){
+
+        @Override
+        public void handleMessage(Message msg) {
+            Bitmap bit = (Bitmap)msg.obj;
+            ur_p_img.setImageBitmap(bit);
+        }
+    };
 }
