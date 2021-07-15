@@ -51,8 +51,6 @@ public class pillExAdapter extends BaseAdapter {
             TextView spe_p_6 = convertView.findViewById(R.id.spe_p_6);
             TextView spe_p_7 = convertView.findViewById(R.id.spe_p_7);
             ImageView spe_p_img = convertView.findViewById(R.id.spe_p_img);
-            ImageButton spe_btn_record = convertView.findViewById(R.id.spe_btn_record);
-            ImageButton spe_btn_danger = convertView.findViewById(R.id.spe_btn_danger);
 
 
             Bitmap_pillExDTO item = spe_l.get(position);
@@ -66,32 +64,6 @@ public class pillExAdapter extends BaseAdapter {
             spe_p_7.setText(item.getDto().getSpe_p_7());
             spe_p_img.setImageBitmap(item.getBitmap());
 
-
-
-        spe_btn_danger.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, pill_danger.class);
-
-                    //value는 어떻게 넣으면 되는지 할 수 있죠? 네네네네네네 감사합니당
-                    //리스트뷰에 넣었으면 어댑터에서 이벤트를 걸어줘야 먹혀용 ㄱ마사합니다ㅜㅜㅜㅜ
-
-                    intent.putExtra("intent_p_name", spe_p_1.getText().toString());
-                    Log.d("버튼 넘어가기", spe_p_1.getText().toString());
-
-                    context.startActivity(intent);
-                }
-            });
-
-        spe_btn_record.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, user_record.class);
-                intent.putExtra("intent_p_name", spe_p_1.getText().toString());
-
-                context.startActivity(intent);
-                }
-             });
 
             return convertView;
 

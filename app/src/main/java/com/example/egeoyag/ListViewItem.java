@@ -39,7 +39,6 @@ public class ListViewItem {
     }
 
 
-
     public String getYmd() {
         return ymd;
     }
