@@ -54,7 +54,7 @@ public class search_pill_explanation extends AppCompatActivity {
 
     private TextView spe_p_1, spe_p_2, spe_p_3, spe_p_4, spe_p_5, spe_p_6, spe_p_7;
     private ImageView spe_p_img;
-    private String spe_p_num, p_data_not,p_data_not2, p_data_e, img_pill;
+    private String spe_p_num, p_data_not,p_data_not2, p_data_e;
     private String[] arr;//낱
     private String[] arr2;//e
     private String[] arr3;//낱
@@ -66,7 +66,6 @@ public class search_pill_explanation extends AppCompatActivity {
 
     private StringRequest stringRequest;
     private RequestQueue queue;
-
 
     Bitmap bitmap;
 
@@ -91,12 +90,8 @@ public class search_pill_explanation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), pill_danger.class);
-
                 intent.putExtra("intent_p_num", spe_p_num);
-
-
-
-                startActivity(intent);
+                startActivity(intent);//pill_dager로 일련번호 전달
 
             }
         });
@@ -203,20 +198,24 @@ public class search_pill_explanation extends AppCompatActivity {
         public void run() {
             while(!Thread.currentThread().isInterrupted()){
 
-                p_data_not = getPhillData1(spe_p_num);
-                p_data_e = getPhillData2(spe_p_num);
+                for(int i = 0; i<=1; i++){
+                    p_data_not = getPhillData1(spe_p_num);
+                    if(p_data_not.equals("")){i--;}
+                }
+                for(int i = 0; i<=1; i++){
+                    p_data_e = getPhillData2(spe_p_num);
+                    if(p_data_e.equals("")){i--;}
+                }
+                for(int i = 0; i<=1; i++){
+                    p_data_not2 = getPhillData3(spe_p_num);
+                    if(p_data_not2.equals("")){i--;}
+                }
 
-                p_data_not2 = getPhillData3(spe_p_num);
                 tt.interrupt();
-
-//                Log.d("제발", p_data_not);
-//                Log.d("제발2", p_data_e);
 
                 arr = p_data_not.split("#");
                 arr2 = p_data_e.split("#");
                 arr3 = p_data_not2.split("#");
-
-                Log.d("색깔", arr3[0] + arr3[1]);
 
 
                 String spe_p_1 = arr[0];//약이름
@@ -244,9 +243,6 @@ public class search_pill_explanation extends AppCompatActivity {
             }
         }
     }
-
-
-
 
     private void initial() {
         spe_p_1 = findViewById(R.id.spe_p_1);
@@ -311,7 +307,6 @@ public class search_pill_explanation extends AppCompatActivity {
 
                 myHandler.sendMessage(message);
 
-
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -326,9 +321,6 @@ public class search_pill_explanation extends AppCompatActivity {
             super.onPreExecute();
         }
     }
-
-
-
 
 
     private String getPhillData1(String p) {//낱알 API 호출
@@ -407,7 +399,7 @@ public class search_pill_explanation extends AppCompatActivity {
         } catch (Exception e) {
             // TODO Auto-generated catch blocke.printStackTrace();
         }
-
+        Log.d("확인", buffer.toString()+"왜?");
         return buffer.toString();//StringBuffer 문자열 객체 반환
     }//낱알 API 호출
 

@@ -53,6 +53,7 @@ public class user_record extends AppCompatActivity {
     private String p_g = "현우님제발그만..";
     private String mysy = "나의증사아아앙아";
     private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
+    private String p_name, p_company, p_otcetc, p_group, p_img, p_num;
     private ImageView ur_p_img;
     int minday,data3,data4;
     String recordmytime ;
@@ -103,12 +104,14 @@ public class user_record extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String p_name = intent.getStringExtra("intent_p_name");
-        String p_company = intent.getStringExtra("intent_p_company");
-        String p_otcetc = intent.getStringExtra("intent_p_otcetc");
-        String p_group = intent.getStringExtra("intent_p_group");
-        String p_img = intent.getStringExtra("intent_p_img");
-        String p_num = intent.getStringExtra("intent_p_num");
+        p_name = intent.getStringExtra("intent_p_name");
+        p_company = intent.getStringExtra("intent_p_company");
+        p_otcetc = intent.getStringExtra("intent_p_otcetc");
+        p_group = intent.getStringExtra("intent_p_group");
+        p_img = intent.getStringExtra("intent_p_img");
+        p_num = intent.getStringExtra("intent_p_num");
+
+
 
         p_img_link = p_img;
 
@@ -122,22 +125,12 @@ public class user_record extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timeData = dataA + "~" + dataB;
                 Log.d("날짜1",timeData);
-                Log.d("날짜3",dateall);
+                Log.d("날짜3", dateall);
 
                 Log.d("날짜2",String.valueOf(data3+data4));
 
@@ -161,7 +154,7 @@ public class user_record extends AppCompatActivity {
                 // String p_weight = weight.getText().toString();
 
 
-                // sendRequest();
+                 sendRequest();
 
                 //   Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
 
@@ -362,7 +355,13 @@ public class user_record extends AppCompatActivity {
         TextView et_date2 = (TextView) findViewById(R.id.date2);
         et_date2.setText(sdf.format(myCalendar2.getTime()));
         data2 = sdf2.format(myCalendar2.getTime());
+
+
         dataB = sdf.format(myCalendar.getTime());
+
+
+
+        Log.d("확인", dataB);
         data4= Integer.parseInt(data2);
 
         minus_day.setText(String.valueOf(data4-data3+"day"));
@@ -463,10 +462,11 @@ public class user_record extends AppCompatActivity {
                 //=======\
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("drug_num", dnum);
-                params.put("drug_name", p_n.getText().toString());
-                params.put("drug_group", p_g);
-                params.put("drug_img", img);
+
+                params.put("drug_num", p_num);
+                params.put("drug_name", p_name);
+                params.put("drug_group", p_group);
+                params.put("drug_img", p_img);
                 params.put("my_symptom", mysy);
                 params.put("user_taking_date", dateall);
                 params.put("user_time", mytime.getText().toString());

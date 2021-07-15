@@ -8,61 +8,54 @@
 
     <CheckBox
         android:id="@+id/cb_all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="1321px"
+        android:layout_height="150px"
         android:text="전체동의"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/join_right_58px"
+        app:layout_constraintStart_toStartOf="@+id/join_left_58px"
         app:layout_constraintTop_toBottomOf="@+id/edt_join_email" />
 
     <CheckBox
+        android:id="@+id/cb_ad"
+        android:layout_width="1321px"
+        android:layout_height="150px"
+        android:text="광고성 정보 수신동의(선택)"
+        app:layout_constraintStart_toStartOf="@+id/join_left_58px"
+        app:layout_constraintTop_toBottomOf="@+id/cb_marketing" />
+
+    <CheckBox
         android:id="@+id/cb_servie_use"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="1321px"
+        android:layout_height="150px"
         android:text="이거약 서비스 이용약관(필수)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/join_left_58px"
         app:layout_constraintTop_toBottomOf="@+id/cb_all" />
 
     <CheckBox
         android:id="@+id/cb_service_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="1321px"
+        android:layout_height="150px"
         android:text="개인정보 수집 및 이용약관 (필수)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/join_left_58px"
         app:layout_constraintTop_toBottomOf="@+id/cb_servie_use" />
 
     <CheckBox
         android:id="@+id/cb_marketing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="1321px"
+        android:layout_height="150px"
         android:text="마켓팅 활용 동의 (선택)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/join_left_58px"
         app:layout_constraintTop_toBottomOf="@+id/cb_service_in" />
-
-    <CheckBox
-        android:id="@+id/cb_ad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="광고성 정보 수신동의(선택)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cb_marketing" />
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="1440px"
+        android:layout_height="190px"
         android:layout_marginBottom="48dp"
-        android:text="Button"
+        android:background="#1F2A83"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="60px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -70,13 +63,36 @@
 
     <EditText
         android:id="@+id/edt_join_email"
+        android:layout_width="1184px"
+        android:layout_height="128px"
+        android:background="#F5F5F5"
+        android:ems="10"
+        android:hint="이메일을 입력해주세요."
+        android:inputType="textEmailAddress"
+        android:textColor="#707070"
+        android:textSize="50px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="192px" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/join_left_58px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="58px" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/join_right_58px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="58px" />
 </androidx.constraintlayout.widget.ConstraintLayout>

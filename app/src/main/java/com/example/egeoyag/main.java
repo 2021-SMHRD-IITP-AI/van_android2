@@ -655,36 +655,33 @@ public class main extends AppCompatActivity {
 
 
                     p_num = getPhilNumber();
-                    //Log.d("캬라락", p_num);
 
                     getphillnum = p_num.split("@");//일련번호 담아둠
-                    //p_num = ""; // p_num 초기화
 
                     ArrayList<String> test = new ArrayList<String>();
                     test.add("1234");
 
                     for (int i = 0; i < getphillnum.length; i++) {
                         test.add(getphillnum[i]);
-
+                        Log.d("겟필넘확인", getphillnum[i]);
                     }
-                    getphillnum = new String[test.size()];
+
+                    getphillnum = new String[test.size()];//0번째에 1234 값 추가
                     for (int i = 0; i < test.size(); i++) {
                         getphillnum[i] = test.get(i);
                     }
 
+                        //if (getphillnum != null)
 
-                    if (getphillnum != null) {
-//                        for (int i = 0; i < getphillnum.length; i++) {
-//                            Log.d("약정보1", i + "  " + getphillnum[i]);
-//                        }
+                if (getphillnum[0].equals("1234")) {//getphillnum[0]은 "1234"
 
-                        //Log.d("약약약", "길이길이"+getphillnum.length);
-                        for (int i = 0; i < getphillnum.length; i++) {//일련
+                        for (int i = 1; i < getphillnum.length; i++) {
 
-                            String txt = getPhillData1(getphillnum[i]);
+                            String txt = getPhillData1(getphillnum[i]); //getphillnum[i]의 정보를 txt에 저장(#으로 구분)
+                            if(txt.equals("")){i--;}
+
 
                             if (i > 0) {
-                                //Log.d("약약약", "길이길이"+getphillnum.length);
                                 arr = txt.split("#");
                                 if(arr.length > 4) {
 
@@ -703,13 +700,13 @@ public class main extends AppCompatActivity {
                                     DownloadFilesTask task = new DownloadFilesTask();
                                     task.setItem(dto);
 
+                                    if(i == getphillnum.length-1){t.interrupt();Log.d("인터럽트","인터럽트");}
+
                                 }
 
-                                //message.obj = dto;
-                                // myHandler.sendMessage(message);
                             }
 
-                        }t.interrupt();Log.d("인터럽트","인터럽트");
+                        }//t.interrupt();Log.d("인터럽트","인터럽트");
                     }
 
 
@@ -861,7 +858,7 @@ public class main extends AppCompatActivity {
             // TODO Auto-generated catch blocke.printStackTrace();
         }
 
-        Log.d("약정보2", buffer.toString());
+        //Log.d("약정보2", buffer.toString());
 
         return buffer.toString();//StringBuffer 문자열 객체 반환
     }//낱알 API 호출
