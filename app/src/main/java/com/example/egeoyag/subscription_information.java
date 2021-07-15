@@ -60,6 +60,9 @@ public class subscription_information extends AppCompatActivity {
         user_id = intent.getStringExtra("user_id");// 인텐트 받아온값
         Toast.makeText(getApplicationContext(),user_id,Toast.LENGTH_SHORT).show();
 
+
+
+
         edt_join_name = findViewById(R.id.edt_join_name);
         edt_join_pw = findViewById(R.id.edt_join_pw);
         edt_join_pw_ch = findViewById(R.id.edt_join_pw_ch);
@@ -75,6 +78,7 @@ public class subscription_information extends AppCompatActivity {
             public void onClick(View v) {
                 int rd_id = rd_s.getCheckedRadioButtonId();
                 rd_re = findViewById(rd_id);
+                Log.d("라디오 버튼", rd_re.toString() + "/" + rd_id);
                 sendRequest();
             }
 
