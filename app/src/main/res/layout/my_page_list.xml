@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mypagelistview"
+    android:layout_width="1324px"
+    android:layout_height="214px"
+    android:layout_marginStart="58px"
+    android:layout_marginLeft="58px"
+    android:layout_marginEnd="58px"
+    android:layout_marginRight="58px"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="0dp"
+        android:layout_height="50px"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="30px"
+        android:background="@drawable/btn_round"
+        android:gravity="center"
+        android:text="증상"
+        android:textSize="30px"
+        app:layout_constraintStart_toEndOf="@+id/pl_img2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
+
+    <TextView
+        android:id="@+id/tv_ymd2"
+        android:layout_width="205px"
+        android:layout_height="56px"
+        android:layout_marginTop="44px"
+        android:layout_marginBottom="114px"
+        android:gravity="center"
+        android:text="YYYY.MM.DD"
+        android:textColor="#B4B2B2"
+        android:textSize="38px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="246px"
+        android:layout_height="78px"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="7dp"
+        android:text="Pill_name"
+        android:textColor="#101010"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/pl_img2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pl_img2"
+        android:layout_width="214px"
+        android:layout_height="214px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
