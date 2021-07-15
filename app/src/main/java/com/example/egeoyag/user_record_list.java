@@ -74,24 +74,17 @@ public class user_record_list extends AppCompatActivity {
         }
     };
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_input = findViewById(R.id.edt_input);
 
         pl_img = findViewById(R.id.pl_img);
         tv_name = findViewById(R.id.tv_name);
         tv_1 = findViewById(R.id.tv_1);
-
         tv_ymd = findViewById(R.id.tv_ymd);
-
-
-
         img_search = findViewById(R.id.img_search);
 
         sendRequest();
@@ -164,8 +157,6 @@ public class user_record_list extends AppCompatActivity {
                 new DatePickerDialog(user_record_list.this,myDatePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
-
-
 
 
         pillListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

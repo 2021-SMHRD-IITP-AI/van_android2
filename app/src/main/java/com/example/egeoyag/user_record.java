@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -49,21 +50,24 @@ import java.util.Locale;
 import java.util.Map;
 
 public class user_record extends AppCompatActivity {
-    private String img ="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151317976910600064";
-    private String user_id= "1";
-    private String dnum= "199303109";
-    private String p_g = "현우님제발그만..";
-    private String mysy = "나의증사아아앙아";
+//    private String img ="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151317976910600064";
+//    private String user_id= "1";
+//    private String dnum= "199303109";
+//    private String p_g = "현우님제발그만..";
+//    private String mysy = "나의증사아아앙아";
     private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
     private String p_name, p_company, p_otcetc, p_group, p_img, p_num;
     private ImageView ur_p_img;
     int minday,data3,data4;
     String recordmytime ;
 
+
+    private String user_id = "김효매";
     Bitmap bitmap;
 
     TextView btn_send;
-    TextView   p_n, p_c, jun, bun, nae, date1, date2, mytime,daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
+    EditText nae;
+    TextView p_n, p_c, jun, date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
     TextView minus_day;
     int cnt1, cnt2, cnt3, cnt4, cnt5;
     private RequestQueue queue; //요청하는 개체
@@ -81,10 +85,10 @@ public class user_record extends AppCompatActivity {
         setContentView(R.layout.activity_user_record);
         day = findViewById(R.id.day);
         //dnum = findViewById(R.id.dnum);
+        ur_p_img = findViewById(R.id.ur_p_img); //이미지 뷰 이름
         p_n = findViewById(R.id.p_n);
         p_c = findViewById(R.id.p_c);
         jun = findViewById(R.id.jun);
-        bun = findViewById(R.id.bun);
         nae = findViewById(R.id.nae);
         date1 = findViewById(R.id.date1);
         date2 = findViewById(R.id.date2);
@@ -115,16 +119,18 @@ public class user_record extends AppCompatActivity {
         p_num = intent.getStringExtra("intent_p_num");
 
 
-
         p_img_link = p_img;
 
         p_n.setText(p_name);
         p_c.setText(p_company);
         jun.setText(p_otcetc);
-        bun.setText(p_group);
+
+
+
 
 
         user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
+        task.execute();
 
         alarm_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -477,12 +483,15 @@ public class user_record extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
 
-                params.put("drug_num", dnum);
-                params.put("drug_name", p_n.getText().toString());
-                params.put("otcetc", jun.getText().toString());
-                params.put("drug_group", p_g);
-                params.put("drug_img", img);
-                params.put("my_symptom", mysy);
+
+
+                params.put("drug_num", p_num);
+                params.put("drug_name", p_name);
+                params.put("otcetc", p_otcetc);
+                params.put("drug_group", p_group);
+                params.put("drug_img", p_img); //인텐트에서 받아온 값
+
+                params.put("my_symptom", nae.getText().toString());
                 params.put("user_taking_date", dateall);
                 params.put("user_time", mytime.getText().toString());
                 params.put("user_height", length.getText().toString());
@@ -493,9 +502,9 @@ public class user_record extends AppCompatActivity {
                 params.put("user_id", user_id);
 
                 Log.v("약이름 값확인", p_n.getText().toString() + "확인");
-                Log.v("약이미지 값확인", img + "확인");
-                Log.v("약번호 값확인", dnum+ "확인");
-                Log.v("유저아이디 값확인", user_id+ "확인");
+                Log.v("약이미지 값확인", p_img + "확인");
+                Log.v("약번호 값확인", p_num+ "확인");
+               // Log.v("유저아이디 값확인", user_id+ "확인");
                 Log.v("복용날짜 값확인", dateall+ "확인");
                 Log.v("복용시간 값확인", mytime.getText().toString()+ "확인");
                 Log.v("복용알람날짜 값확인", day.getText().toString()+ "확인");
@@ -555,7 +564,7 @@ public class user_record extends AppCompatActivity {
         @Override
         protected Object doInBackground(Object[] objects) {
             try {
-                URL url = new URL(p_img_link+"");
+                URL url = new URL(p_img+"");
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 bitmap = BitmapFactory.decodeStream(con.getInputStream());
 

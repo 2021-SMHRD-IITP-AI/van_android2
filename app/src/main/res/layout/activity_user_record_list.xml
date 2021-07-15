@@ -113,20 +113,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="407dp"
+        android:layout_width="1324px"
         android:layout_height="574dp"
-        android:layout_marginStart="58px"
-        android:layout_marginLeft="58px"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="58px"
-        android:layout_marginRight="58px"
         android:background="@drawable/edit_round2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <ScrollView
-            android:layout_width="1440px"
+            android:layout_width="1324px"
             android:layout_height="2012px"
             android:layout_marginStart="58px"
             android:layout_marginLeft="58px"
@@ -139,15 +135,16 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="1324px"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ListView
                     android:id="@+id/pillListView"
-                    android:layout_width="match_parent"
+                    android:layout_width="1324px"
                     android:layout_height="575dp"
-                    android:textFilterEnabled= "true"/>
+                    android:paddingLeft="10dp"
+                    android:textFilterEnabled="true" />
             </LinearLayout>
         </ScrollView>
 

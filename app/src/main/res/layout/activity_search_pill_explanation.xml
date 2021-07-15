@@ -68,7 +68,7 @@
                     android:id="@+id/spe_p_1"
                     android:layout_width="300dp"
                     android:layout_height="33dp"
-                    android:text="페라트라정2.5밀리그램(레트로졸)"
+                    android:text="약이름약이름약이름(약이름약이름)"
                     android:textColor="#000000"
                     android:textSize="70px"
                     android:textStyle="bold"
@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="(주)글락소스미스클라인"
+                    android:text="(주)의약품회사회사회사"
                     android:textColor="#B4B2B2"
                     android:textSize="50px"
                     app:layout_constraintStart_toStartOf="@+id/left_58px"
@@ -144,7 +144,7 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="기타의 소화기관용약"
+                    android:text="의약품 분류분류명"
                     android:textSize="40px"
                     app:layout_constraintStart_toStartOf="@+id/left_58px"
                     app:layout_constraintTop_toTopOf="@+id/eff_up_448px" />
@@ -172,7 +172,7 @@
                     android:layout_width="1324px"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="이 약은 심근경색, 뇌경색, 불안정형 협심증에서 혈전 생성 억제와?관상동맥 우회술(CABG) 또는 경피경관 관상동맥 성형술(PTCA) 후 혈전 생성 억제와 고위험군환자(허혈성 심장질환의 가족력, 고혈압, 고콜레스테롤혈증, 비만, 당뇨 등 복합적 위험인자를 가진 환자)에서 심혈관계 위험성 감소에 사용합니다."
+                    android:text="의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품"
                     android:visibility="visible"
                     app:layout_constraintStart_toStartOf="@+id/left_58px"
                     app:layout_constraintTop_toBottomOf="@+id/textView20" />
@@ -201,7 +201,7 @@
                     android:layout_width="1324px"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="쇽 증상(예: 호흡곤란, 전신조홍, 혈관부종, 두드러기), 천식발작, 과민증(홍반, 간지러움, 코막힘, 심장-호흡기 장애, 때때로 발진, 부종, 두드러기, 비염양 증상, 결막염), 드물게 리엘증후군(독성표피괴사용해), 스티븐스-존슨증후군(피부점막안증후군), 박탈성피부염, 재생불량성빈혈, 빈혈, 백혈구감소, 혈소판감소, 혈소판기능 저하(출혈시간의 지연), 귀에서 소리가 남, 귀 먹음, 어지러움, 두통, 흥분, 드물게 간장애, 매우 드물게 일시적인 간손상, 신장애, 급성신부전, 과호흡, 대사성 산증, 과도한 체온강하, 허탈, 사지냉각 등이 나타나는 경우 즉시 복용을 중지하고 의사 또는 약사와 상의하십시오. 식욕부진, 가슴쓰림, 위통, 구역, 구토 등이 나타날 수 있습니다. "
+                    android:text="의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품"
                     android:visibility="visible"
                     app:layout_constraintEnd_toStartOf="@+id/right58px"
                     app:layout_constraintStart_toStartOf="@+id/left_58px"
@@ -225,7 +225,7 @@
                     android:layout_width="1324px"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="성인은 1회 1정, 1일 1회 복용합니다. 이 약은 장용정이므로 충분한 물과 함께 식전에 복용할 수 있습니다.  "
+                    android:text="의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품의약품"
                     android:visibility="visible"
                     app:layout_constraintEnd_toStartOf="@+id/right58px"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -256,22 +256,27 @@
                         android:layout_width="74px"
                         android:layout_height="74px"
                         android:layout_marginEnd="17dp"
-
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
                         android:layout_marginRight="17dp"
+                        android:background="#00FB0909"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/indigo" />
+                        app:srcCompat="@drawable/arrow" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageButton
                     android:id="@+id/spe_btn_record"
                     android:layout_width="148px"
                     android:layout_height="148px"
+                    android:adjustViewBounds="true"
+                    android:background="#002B1919"
+                    android:scaleType="fitCenter"
                     app:layout_constraintBottom_toTopOf="@+id/name_up_128px2"
                     app:layout_constraintEnd_toStartOf="@+id/right58px"
                     app:layout_constraintTop_toTopOf="@+id/name_up_128px"
-                    app:srcCompat="@drawable/turquoise" />
+                    app:srcCompat="@drawable/smail_record" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

@@ -60,7 +60,9 @@ public class search_pill_explanation extends AppCompatActivity {
     private String[] arr3;//낱
     private String[] str_name;
     private Thread tt;
+    private String spe_p1, spe_p2, spe_p3, spe_p4, spe_p5, spe_p6, spe_p7, spe_pimg;
     private ListView spe_l;
+
 
     private ImageButton spe_btn_danger, spe_btn_record;
 
@@ -125,7 +127,7 @@ public class search_pill_explanation extends AppCompatActivity {
 
 
         String url = "http://59.0.249.28:3000/Drugs";
-//        String url = "http://172.17.96.1:3000/Drugs";
+
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {//server 로부터 데이터를 받아온 곳
@@ -200,42 +202,45 @@ public class search_pill_explanation extends AppCompatActivity {
 
                 for(int i = 0; i<=1; i++){
                     p_data_not = getPhillData1(spe_p_num);
-                    if(p_data_not.equals("")){i--;}
+                    if(p_data_not.equals("")){i=0;}
                 }
-                for(int i = 0; i<=1; i++){
-                    p_data_e = getPhillData2(spe_p_num);
-                    if(p_data_e.equals("")){i--;}
-                }
+
+                   p_data_e = getPhillData2(spe_p_num);
+
                 for(int i = 0; i<=1; i++){
                     p_data_not2 = getPhillData3(spe_p_num);
-                    if(p_data_not2.equals("")){i--;}
+                    if(p_data_not2.equals("")){i=0;}
                 }
 
                 tt.interrupt();
 
                 arr = p_data_not.split("#");
-                arr2 = p_data_e.split("#");
+
                 arr3 = p_data_not2.split("#");
 
-
-                String spe_p_1 = arr[0];//약이름
-                String spe_p_2 = arr[1];//약회사
-                String spe_p_3 = arr[4];//전문/일반
-                String spe_p_4 = arr[3];//분류명(기타의 소화기관용약, 해열제 ...)
-                String spe_p_img = arr[2];//의약품 이미지
-
-                String spe_p_5 = "정보가 부족합니다";//효능(이 약은 심근 경색, 뇌 경색)
-                String spe_p_6 = "정보가 부족합니다";//부작용(쇽 증상 예 호흡곤란,...)
-                String spe_p_7 = "정보가 부족합니다";//용법용량(성인은 1회 1정 ~
-
-                if(!arr2[0].equals("")){
-                    spe_p_5 = arr2[0];//효능(이 약은 심근 경색, 뇌 경색)
-                    spe_p_6 = arr2[2];//부작용(쇽 증상 예 호흡곤란,...)
-                    spe_p_7 = arr2[1];//용법용량(성인은 1회 1정 ~
+                if(p_data_e.equals("")){
+                    spe_p5 = "널";//효능(이 약은 심근 경색, 뇌 경색)
+                    spe_p6 = "널";//부작용(쇽 증상 예 호흡곤란,...)
+                    spe_p7 = "널";//용법용량(성인은 1회 1정 ~
                 }
+                else{
+                    arr2 = p_data_e.split("#");
+                    spe_p5 = arr2[0];//효능(이 약은 심근 경색, 뇌 경색)
+                    spe_p6 = arr2[2];//부작용(쇽 증상 예 호흡곤란,...)
+                    spe_p7 = arr2[1];//용법용량(성인은 1회 1정 ~
+                    }
 
 
-                pillExDTO dto = new pillExDTO(spe_p_1, spe_p_2, spe_p_3, spe_p_4, spe_p_5, spe_p_6, spe_p_7, spe_p_img);
+                spe_p1 = arr[0];//약이름
+                spe_p2 = arr[1];//약회사/
+                spe_p3 = arr[4];//전문/일반
+                spe_p4 = arr[3];//분류명(기타의 소화기관용약, 해열제 ...)
+                spe_pimg = arr[2];//의약품 이미지
+
+
+
+
+                pillExDTO dto = new pillExDTO(spe_p1, spe_p2, spe_p3, spe_p4, spe_p5, spe_p6, spe_p7, spe_pimg);
 
                 search_pill_explanation.DownloadFilesTask task = new search_pill_explanation.DownloadFilesTask();
                 task.setItem(dto);
