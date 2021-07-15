@@ -4,6 +4,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".user_record_list">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="1440px"
+        android:layout_height="224px"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_58px_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="58px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_58px_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="17dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="32px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/search_up_308px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="244px"
+            android:layout_marginEnd="411dp"
+            android:layout_marginRight="411dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="64px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_input"
+            android:layout_width="1032px"
+            android:layout_height="128px"
+            android:layout_marginStart="24px"
+            android:layout_marginLeft="24px"
+            android:layout_marginTop="64px"
+            android:background="@drawable/edit_round"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/btn_date"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="268px"
+            android:layout_height="128px"
+            android:layout_marginStart="58px"
+            android:layout_marginLeft="58px"
+            android:layout_marginTop="64px"
+            android:background="@drawable/edit_round"
+            android:text="날짜"
+            android:textColor="#707070"
+            android:textSize="45px"
+            app:backgroundTint="#F5F5F5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24.5px"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_marginBottom="23.5px"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/right_58px_3"
+            app:layout_constraintTop_toTopOf="@+id/search_up_308px"
+            app:srcCompat="@android:drawable/dark_header" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="26dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="30.75px"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="38.58px"
+            android:paddingTop="0px"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/right_58px_3"
+            app:layout_constraintTop_toTopOf="@+id/search_up_308px"
+            app:layout_constraintVertical_bias="0.6"
+            app:srcCompat="@drawable/icon_search" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="407dp"
+        android:layout_height="574dp"
+        android:layout_marginStart="58px"
+        android:layout_marginLeft="58px"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="58px"
+        android:layout_marginRight="58px"
+        android:background="@drawable/edit_round2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <ScrollView
+            android:layout_width="1440px"
+            android:layout_height="2012px"
+            android:layout_marginStart="58px"
+            android:layout_marginLeft="58px"
+            android:layout_marginEnd="58px"
+            android:layout_marginRight="58px"
+            android:background="@drawable/edit_round2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/pillListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="575dp"
+                    android:textFilterEnabled= "true"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
