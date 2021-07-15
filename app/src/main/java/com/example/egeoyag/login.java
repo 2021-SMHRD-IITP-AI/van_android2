@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class login extends AppCompatActivity {
     private EditText edt_email,edt_password;
-    private Button btn_login;
+    private Button btn_login, login_btn_join;
     private RequestQueue queue;
     private StringRequest stringRequest;
     private ArrayList<MemberDTO> MemberList = new ArrayList<MemberDTO>();
@@ -42,23 +42,35 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
 
         edt_email = findViewById(R.id.edt_email);
         edt_password = findViewById(R.id.edt_password);
         btn_login = findViewById(R.id.btn_login);
+        login_btn_join = findViewById(R.id.login_btn_join);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 sendRequest();
+
             }
         });
+
+        login_btn_join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), join.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
     public void sendRequest(){
         queue = Volley.newRequestQueue(this);
-        String url ="http://172.17.96.1:3000/Login";
+        String url ="http://59.0.249.28:3000/Login";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -69,18 +81,17 @@ public class login extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
                         String id = jsonObject.getString("id");
-                        Log.v("성공3",id);
                         String pw = jsonObject.getString("pw");
-                        Log.v("성공4",id);
                         String name = jsonObject.getString("name");
                         String tel = jsonObject.getString("tel");
+
+                        Log.d("확인", id + pw + name + tel);
 
                         MemberDTO info = new MemberDTO(id,pw,name,tel);
                         Gson gson = new Gson();
 
                         String value = gson.toJson(info);
 
-                        Log.v("resultValue", value);
                         PreferenceManager.setString(getApplicationContext(), "info", value);
 
 

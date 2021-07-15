@@ -28,20 +28,22 @@
         <activity android:name=".search_pill_list" />
         <activity android:name=".main" />
 
-        <activity android:name=".splash" />
-        <activity android:name=".reset_password" />
-        <activity android:name=".find_email_completed" />
-        <activity android:name=".subscription_information_check_pw" />
-        <activity android:name=".subscription_information_check_email" />
-        <activity android:name=".subscription_information" />
-        <activity android:name=".join" >
+        <activity android:name=".splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".reset_password" />
+        <activity android:name=".find_email_completed" />
+        <activity android:name=".subscription_information_check_pw" />
+        <activity android:name=".subscription_information_check_email" />
+        <activity android:name=".subscription_information" />
+        <activity android:name=".join" />
+
         <activity android:name=".login" />
+
     </application>
 
 </manifest>

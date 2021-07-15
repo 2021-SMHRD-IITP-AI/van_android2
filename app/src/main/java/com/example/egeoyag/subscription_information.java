@@ -39,6 +39,7 @@ public class subscription_information extends AppCompatActivity {
     private StringRequest stringRequest;
     private String user_id;
     private RadioButton rd_re;
+    private String gender;
 
     Calendar myCalendar = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
@@ -61,25 +62,37 @@ public class subscription_information extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),user_id,Toast.LENGTH_SHORT).show();
 
 
-
-
         edt_join_name = findViewById(R.id.edt_join_name);
         edt_join_pw = findViewById(R.id.edt_join_pw);
         edt_join_pw_ch = findViewById(R.id.edt_join_pw_ch);
         edt_join_phone = findViewById(R.id.edt_join_phone);
         edt_join_date = findViewById(R.id.edt_join_date);
 
-        RadioGroup rd_s = findViewById(R.id.RadioGroup);
         btn_join = findViewById(R.id.btn_join);
+        RadioGroup rd_group = findViewById(R.id.rd_group);
+
+        rd_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (checkedId == R.id.rd_sex_m) {                // 첫 번째 버튼이 선택 되었을 때
+                    gender = "남";
+                } else if (checkedId == R.id.rd_sex_w) {      // 두 번째 버튼이 선택 되었을 때
+                    gender = "여";
+                }
+            }
+        });
+
 
         //서버에 보내는 버튼
         btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int rd_id = rd_s.getCheckedRadioButtonId();
-                rd_re = findViewById(rd_id);
-                Log.d("라디오 버튼", rd_re.toString() + "/" + rd_id);
-                sendRequest();
+                if(edt_join_name.equals("")||edt_join_pw.equals("")||edt_join_pw_ch.equals("")||edt_join_phone.equals("")||edt_join_date.equals("")){
+                    Toast.makeText(getApplicationContext(), "회원정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                }else{
+                    sendRequest();
+                }
             }
 
         });
@@ -104,7 +117,7 @@ public class subscription_information extends AppCompatActivity {
 
     private void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url ="http://172.17.96.1:3000/Join";
+        String url ="http://59.0.249.28:300/Join";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -114,7 +127,6 @@ public class subscription_information extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
                     if (value.equals("true")) {
-
                         Intent intent = new Intent(getApplicationContext(),login.class);
                         startActivity(intent);
                     } else {
@@ -141,7 +153,7 @@ public class subscription_information extends AppCompatActivity {
                 paramas.put("user_pw",edt_join_pw_ch.getText().toString());
                 paramas.put("user_name",edt_join_name.getText().toString());
                 paramas.put("user_tel",edt_join_phone.getText().toString());
-                paramas.put("user_gender",rd_re.getText().toString());
+                paramas.put("user_gender",gender);
                 paramas.put("user_birth",edt_join_date.getText().toString());
                 return paramas;
             }

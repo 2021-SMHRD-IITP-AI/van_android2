@@ -240,7 +240,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="480dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp" >
+
+            </ListView>
         </LinearLayout>
     </ScrollView>
 
@@ -781,7 +783,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/l_ham"
-        android:layout_width="926px"
+        android:layout_width="514px"
         android:layout_height="2560px"
         android:layout_gravity="start|left"
         android:background="#FFFFFF"
@@ -797,5 +799,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
+
+    <Button
+        android:id="@+id/btn_backg"
+        android:layout_width="514px"
+        android:layout_height="2560px"
+        android:background="#00B53D3D"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

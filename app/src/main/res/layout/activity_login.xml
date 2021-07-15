@@ -232,11 +232,14 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="270px" />
 
-    <TextView
-        android:id="@+id/tv_join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/login_btn_join"
+        android:layout_width="129px"
+        android:layout_height="58px"
+        android:background="#00FFFFFF"
+        android:shadowColor="#00FFFFFF"
         android:text="회원가입"
+        android:textColor="#707070"
         android:textSize="35px"
         app:layout_constraintBottom_toTopOf="@+id/찾기_가이드_아래"
         app:layout_constraintEnd_toStartOf="@+id/guideline17" />
@@ -248,7 +251,7 @@
         android:text="비밀번호찾기"
         android:textSize="35px"
         app:layout_constraintBottom_toTopOf="@+id/찾기_가이드_아래"
-        app:layout_constraintEnd_toStartOf="@+id/tv_join"
+        app:layout_constraintEnd_toStartOf="@+id/login_btn_join"
         app:layout_constraintStart_toEndOf="@+id/tv_find_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

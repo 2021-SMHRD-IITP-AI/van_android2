@@ -96,7 +96,7 @@ public class join extends AppCompatActivity {
 
     public void sendRequest(){
         queue = Volley.newRequestQueue(this);
-        String url = "http://172.17.96.1:3000/EmailCheck";
+        String url = "http://59.0.249.28:300/EmailCheck";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

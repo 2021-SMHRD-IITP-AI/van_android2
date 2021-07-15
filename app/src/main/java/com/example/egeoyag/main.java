@@ -43,7 +43,7 @@ public class main extends AppCompatActivity {
 
     private ArrayList p_list;
 
-    private Button m_btn_1, m_btn_2;
+    private Button m_btn_1, m_btn_2, btn_backg;
     private ImageButton m_submit, m_hambuger, m_ham_1, m_ham_2, m_ham_3, m_hambubu;
     private EditText m_edt_s;
     private ToggleButton tb_1, tb_2, tb_3, tb_4, tb_5, tb_6, tb_7, tb_8, tb_9, tb_10, tb_11, tb_12, tb_13, tb_14, tb_15, tb_16;
@@ -539,15 +539,17 @@ public class main extends AppCompatActivity {
         m_hambuger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int ham_state_cnt = 0;
-                if (ham_state_cnt % 2 == 0) {
-                    l_hambuger.setVisibility((View.VISIBLE));
+                btn_backg.setVisibility(View.VISIBLE);
+                l_hambuger.setVisibility(View.VISIBLE);
 
-                    ham_state_cnt++;
-                } else {
-                    l_hambuger.setVisibility((View.INVISIBLE));
-                    ham_state_cnt++;
-                }
+            }
+        });
+
+        btn_backg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                l_hambuger.setVisibility(View.INVISIBLE);
+                btn_backg.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -598,6 +600,7 @@ public class main extends AppCompatActivity {
         m_btn_2 = findViewById(R.id.m_btn_2);
         m_submit = findViewById(R.id.m_submit);
         m_edt_s = findViewById(R.id.m_edt_s);
+        btn_backg = findViewById(R.id.btn_backg);
 
         m_hambuger = findViewById(R.id.m_hambuger);
         m_hambubu = findViewById(R.id.m_hambubu);

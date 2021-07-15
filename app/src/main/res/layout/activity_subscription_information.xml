@@ -13,7 +13,6 @@
         android:ems="10"
         android:gravity="right"
         android:inputType="textPersonName"
-        android:text="아무개"
         android:textSize="45px"
         app:layout_constraintEnd_toStartOf="@+id/si_right_58px"
         app:layout_constraintHorizontal_bias="0.227"
@@ -29,7 +28,6 @@
         android:gravity="right"
         android:inputType="textPassword"
         android:paddingBottom="20dp"
-        android:text="**************"
         android:textSize="45px"
         app:layout_constraintEnd_toStartOf="@+id/si_right_58px"
         app:layout_constraintHorizontal_bias="0.227"
@@ -45,7 +43,6 @@
         android:gravity="right"
         android:inputType="textPassword"
         android:paddingBottom="20dp"
-        android:text="*************"
         android:textSize="45px"
         app:layout_constraintEnd_toStartOf="@+id/si_right_58px"
         app:layout_constraintHorizontal_bias="0.227"
@@ -60,7 +57,6 @@
         android:ems="10"
         android:gravity="right"
         android:inputType="phone"
-        android:text="01000000000"
         android:textSize="45px"
         app:layout_constraintEnd_toStartOf="@+id/si_right_58px"
         app:layout_constraintHorizontal_bias="0.227"
@@ -75,7 +71,6 @@
         android:ems="10"
         android:gravity="right"
         android:inputType="date"
-        android:text="0000.00.00"
         android:textSize="45px"
         app:layout_constraintEnd_toStartOf="@+id/si_right_58px"
         app:layout_constraintStart_toStartOf="@+id/si_left_58px"
@@ -95,7 +90,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:id="@+id/RadioGroup"
+        android:id="@+id/rd_group"
         android:layout_width="150dp"
         android:layout_height="52dp"
         android:layout_marginTop="292dp"
