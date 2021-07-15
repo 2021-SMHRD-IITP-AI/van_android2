@@ -16,8 +16,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -60,14 +62,14 @@ public class user_record extends AppCompatActivity {
 
     Bitmap bitmap;
 
-    Button btn_send;
+    TextView btn_send;
     TextView   p_n, p_c, jun, bun, nae, date1, date2, mytime,daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
     TextView minus_day;
     int cnt1, cnt2, cnt3, cnt4, cnt5;
     private RequestQueue queue; //요청하는 개체
     private StringRequest stringRequest; // queue가 정보를 통해서...
+    Switch alarm_switch; //스위치
 
-    //private MemberAdapter adapter;
     Calendar myCalendar = Calendar.getInstance();
     Calendar myCalendar2 = Calendar.getInstance();
     Calendar myCalendar3 = Calendar.getInstance();
@@ -102,6 +104,7 @@ public class user_record extends AppCompatActivity {
 
         btn_send = findViewById(R.id.btn_send);
 
+        alarm_switch=findViewById(R.id.alarm_switch);
 
         Intent intent = getIntent();
         p_name = intent.getStringExtra("intent_p_name");
@@ -123,7 +126,20 @@ public class user_record extends AppCompatActivity {
 
         user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
 
+        alarm_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
 
+                    Log.d("알람기능","켰음");
+
+                }else{
+                    time.setText("시간선택");
+                    day.setText("요일선택");
+                    Log.d("알람기능","껐음");
+                }
+            }
+        });
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,9 +172,9 @@ public class user_record extends AppCompatActivity {
 
                  sendRequest();
 
-                //   Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
+                Intent intent = new Intent(getApplicationContext(), user_record_list.class);
 
-                //   startActivity(intent); // UserInfoChange2클래스로 이동
+                startActivity(intent);
 
 
             }
@@ -185,6 +201,7 @@ public class user_record extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(user_record.this, myDatePicker2, myCalendar2.get(Calendar.YEAR), myCalendar2.get(Calendar.MONTH), myCalendar2.get(Calendar.DAY_OF_MONTH)).show();
+                alarm_switch.setChecked(true);
             }
         });
 
@@ -193,6 +210,7 @@ public class user_record extends AppCompatActivity {
         et_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                alarm_switch.setChecked(true);
                 Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
@@ -390,11 +408,7 @@ public class user_record extends AppCompatActivity {
             day.setText("토요일");
         }
     }
-    //  private  void checked(){
-    //     if (cnt1==1){
 
-    //     }
-    //   }
 
     private void sendRequest() {
         // adapter = new MemberAdapter();
@@ -463,10 +477,11 @@ public class user_record extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
 
-                params.put("drug_num", p_num);
-                params.put("drug_name", p_name);
-                params.put("drug_group", p_group);
-                params.put("drug_img", p_img);
+                params.put("drug_num", dnum);
+                params.put("drug_name", p_n.getText().toString());
+                params.put("otcetc", jun.getText().toString());
+                params.put("drug_group", p_g);
+                params.put("drug_img", img);
                 params.put("my_symptom", mysy);
                 params.put("user_taking_date", dateall);
                 params.put("user_time", mytime.getText().toString());
@@ -476,17 +491,6 @@ public class user_record extends AppCompatActivity {
                 params.put("user_myalartime", time.getText().toString());
                 params.put("user_myalartday", day.getText().toString());
                 params.put("user_id", user_id);
-                // params.put("p_daybreak", daybreak.getText().toString());
-                // params.put("p_morning", morning.getText().toString());
-                // params.put("p_afternoon", afternoon.getText().toString());
-                // params.put("p_evening", evening.getText().toString());
-                // params.put("p_midnight", midnight.getText().toString());
-                // params.put("p_time", time.getText().toString());
-                // params.put("p_day", day.getText().toString());
-                // params.put("p_length", length.getText().toString());
-                // params.put("p_weight", weight.getText().toString());
-                // params.put("user_id", "2");
-                // params.put("num", "200808096");
 
                 Log.v("약이름 값확인", p_n.getText().toString() + "확인");
                 Log.v("약이미지 값확인", img + "확인");
