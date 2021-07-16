@@ -506,7 +506,7 @@ public class main extends AppCompatActivity {
 
 
                         intent.putExtra("intent_p_num", intent_p_num);
-                        intent.putExtra("path","0");
+
 
                         startActivity(intent);
                         if(intent!=null){
