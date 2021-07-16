@@ -5,5 +5,592 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user_record_modify">
+    <!-- 툴바주석처리    <include-->
+    <!-- 툴바주석처리     layout="@layout/record_toolbar"-->
+    <!-- 툴바주석처리     android:id="@+id/record_toolbar" />-->
+    <!-- 파란색   #1F2A83-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Con1"
+        android:layout_width="1440px"
+        android:layout_height="260px"
+        android:background="#1F2A83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1300px"
+            android:layout_marginLeft="358dp"
+            android:layout_marginTop="134px"
+            android:layout_marginEnd="58px"
+            android:layout_marginRight="28dp"
+            android:text="수정"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="나의 기록"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="2045px"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Con1">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="128px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="500dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout6"
+                    android:layout_width="1440px"
+                    android:layout_height="701px"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ur_p_img2"
+                        android:layout_width="1440px"
+                        android:layout_height="701px"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@tools:sample/avatars" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="-2dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="701px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="519dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="58px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="58px" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="1440px"
+                    android:layout_height="1820px"
+                    android:layout_marginTop="218dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="1324.46px"
+                        android:layout_height="1244.2px"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.775">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="13dp"
+                            android:layout_height="74px"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center"
+                            android:text="~"
+                            app:layout_constraintEnd_toStartOf="@+id/date2"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/date1"
+                            app:layout_constraintTop_toTopOf="@+id/date1" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="429px"
+                            android:layout_height="74px"
+                            android:layout_marginTop="96dp"
+                            android:hint="날짜를 입력해주세요"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.541"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Switch
+                            android:id="@+id/alarm_switch"
+                            android:layout_width="160px"
+                            android:layout_height="71.92px"
+                            android:layout_marginTop="180px"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/midnight" />
+
+                        <TextView
+                            android:id="@+id/length"
+                            android:layout_width="627px"
+                            android:layout_height="176px"
+                            android:layout_marginTop="28dp"
+                            android:ems="10"
+
+                            android:gravity="bottom|end"
+                            android:inputType="textPersonName"
+                            android:text="키 입력"
+                            android:textSize="50px"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+                        <TextView
+                            android:id="@+id/weight"
+                            android:layout_width="627px"
+                            android:layout_height="176px"
+                            android:layout_marginStart="196dp"
+                            android:layout_marginLeft="196dp"
+                            android:layout_marginTop="102dp"
+                            android:ems="10"
+                            android:foregroundGravity="bottom|center"
+                            android:gravity="bottom|end"
+                            android:inputType="textPersonName"
+                            android:text="몸무게 입력"
+                            android:textSize="50px"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/afternoon" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="74px"
+                            android:layout_marginTop="68dp"
+                            android:layout_marginEnd="319dp"
+                            android:layout_marginRight="319dp"
+                            android:text="복용날짜"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/date1"
+                            android:layout_width="429px"
+                            android:layout_height="74px"
+                            android:layout_marginTop="96dp"
+                            android:hint="날짜를 입력해주세요"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/minus_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="96dp"
+                            android:text="day"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontalScrollView"
+                            android:layout_width="1324px"
+                            android:layout_height="148px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:layout_editor_absoluteX="1dp"
+                                tools:layout_editor_absoluteY="-2dp">
+
+                                <TextView
+                                    android:id="@+id/nae"
+                                    android:layout_width="330px"
+                                    android:layout_height="148px"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/recordnae"
+                                    android:gravity="center"
+                                    android:text="내 증상" />
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/my_time"
+                            android:layout_width="226px"
+                            android:layout_height="58px"
+                            android:layout_marginTop="143dp"
+                            android:layout_marginEnd="314dp"
+                            android:layout_marginRight="314dp"
+                            android:text="복용시간대"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="226px"
+                            android:layout_height="58px"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="314dp"
+                            android:layout_marginRight="314dp"
+                            android:text="복용 알람"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/daybreak"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="58px"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="314dp"
+                            android:layout_marginRight="314dp"
+                            android:text="시간선택"
+                            android:textSize="50px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                        <TextView
+                            android:id="@+id/day"
+                            android:layout_width="226px"
+                            android:layout_height="58px"
+                            android:layout_marginStart="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="60dp"
+                            android:text="요일선택"
+                            android:textSize="50px"
+                            app:layout_constraintBottom_toBottomOf="@+id/time"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/morning"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <TextView
+                            android:id="@+id/daybreak"
+                            android:layout_width="245px"
+                            android:layout_height="74px"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/recordmytime"
+                            android:gravity="center"
+                            android:text="기상직후"
+                            android:textColor="#000000"
+                            android:textSize="40px"
+                            app:layout_constraintEnd_toStartOf="@+id/morning"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/my_time" />
+                        <!--                        android:background="@drawable/selector_record"-->
+
+                        <TextView
+                            android:id="@+id/morning"
+                            android:layout_width="245px"
+                            android:layout_height="74px"
+                            android:background="@drawable/recordmytime"
+                            android:gravity="center"
+                            android:text="아침"
+                            android:textColor="#000000"
+                            android:textSize="40px"
+                            app:layout_constraintEnd_toStartOf="@+id/afternoon"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/daybreak"
+                            app:layout_constraintTop_toTopOf="@+id/daybreak" />
+
+                        <TextView
+                            android:id="@+id/afternoon"
+                            android:layout_width="245px"
+                            android:layout_height="74px"
+                            android:background="@drawable/recordmytime"
+                            android:gravity="center"
+                            android:text="점심"
+                            android:textColor="#000000"
+                            android:textSize="40px"
+                            app:layout_constraintEnd_toStartOf="@+id/evening"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/morning"
+                            app:layout_constraintTop_toTopOf="@+id/morning" />
+
+                        <TextView
+                            android:id="@+id/evening"
+                            android:layout_width="245px"
+                            android:layout_height="74px"
+                            android:background="@drawable/recordmytime"
+                            android:gravity="center"
+                            android:text="저녁"
+                            android:textColor="#000000"
+                            android:textSize="40px"
+                            app:layout_constraintEnd_toStartOf="@+id/midnight"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/afternoon"
+                            app:layout_constraintTop_toTopOf="@+id/afternoon" />
+
+                        <TextView
+                            android:id="@+id/midnight"
+                            android:layout_width="245px"
+                            android:layout_height="74px"
+                            android:background="@drawable/recordmytime"
+                            android:gravity="center"
+                            android:text="취침전"
+                            android:textColor="#000000"
+                            android:textSize="40px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/evening"
+                            app:layout_constraintTop_toTopOf="@+id/evening" />
+                        <!--                        android:background="@drawable/selector_record"-->
+
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="29dp"
+                            android:layout_marginEnd="363dp"
+                            android:layout_marginRight="363dp"
+                            android:text="키"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/p_n"
+                        android:layout_width="371px"
+                        android:layout_height="119px"
+                        android:layout_marginTop="40dp"
+                        android:text="Pill_name"
+                        android:textSize="80px"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.052"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/p_c"
+                        android:layout_width="307px"
+                        android:layout_height="74px"
+                        android:layout_marginTop="6dp"
+                        android:text="Pill_company"
+                        android:textSize="50px"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.049"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/p_n" />
+
+                    <TextView
+                        android:id="@+id/jun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="59px"
+                        android:layout_marginTop="80dp"
+                        android:text="전문의약"
+                        android:textSize="40px"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.329"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/bun"
+                        android:layout_width="36dp"
+                        android:layout_height="19dp"
+                        android:layout_marginTop="80dp"
+                        android:text="분류명"
+                        android:textSize="40px"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.476"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="127.8px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="296dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="1213px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="1224px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="1075px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="866px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="693px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="429px" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="638px" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="1440px"
+                    android:layout_height="701px"
+                    android:layout_marginTop="2649px"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="303dp"
+                        android:layout_marginRight="303dp"
+                        android:text="나의 상태 기록"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/user_record"
+                        android:layout_width="1324px"
+                        android:layout_height="241px"
+                        android:layout_marginStart="63dp"
+                        android:layout_marginLeft="63dp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginEnd="52dp"
+                        android:layout_marginRight="52dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:text="나의 상태를 기록해보세요."
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.56"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

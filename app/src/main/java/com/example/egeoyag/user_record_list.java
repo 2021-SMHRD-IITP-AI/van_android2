@@ -97,7 +97,7 @@ public class user_record_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       //액션바 제발...
 
         edt_input = findViewById(R.id.edt_input);
 

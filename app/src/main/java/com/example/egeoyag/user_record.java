@@ -52,12 +52,14 @@ import java.util.Map;
 public class user_record extends AppCompatActivity {
 //    private String img ="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151317976910600064";
 //    private String user_id= "1";
-//    private String dnum= "199303109";
-//    private String p_g = "현우님제발그만..";
+    private String dnum= "";
+    private String p_g = "";
 //    private String mysy = "나의증사아아앙아";
     private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
+
     private String p_name, p_company, p_otcetc, p_group, p_img, p_num;
     private ImageView ur_p_img;
+
     int minday,data3,data4;
     String recordmytime ;
 
@@ -65,9 +67,9 @@ public class user_record extends AppCompatActivity {
     private String user_id = "김효매";
     Bitmap bitmap;
 
-    TextView btn_send;
-    EditText nae;
-    TextView p_n, p_c, jun, date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day, length, weight,user_record;
+    Button btn_send;
+    EditText nae,length, weight,user_record;
+    TextView p_n, p_c, jun,bun, date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day ;
     TextView minus_day;
     int cnt1, cnt2, cnt3, cnt4, cnt5;
     private RequestQueue queue; //요청하는 개체
@@ -110,27 +112,89 @@ public class user_record extends AppCompatActivity {
 
         alarm_switch=findViewById(R.id.alarm_switch);
 
-        Intent intent = getIntent();
-        p_name = intent.getStringExtra("intent_p_name");
-        p_company = intent.getStringExtra("intent_p_company");
-        p_otcetc = intent.getStringExtra("intent_p_otcetc");
-        p_group = intent.getStringExtra("intent_p_group");
-        p_img = intent.getStringExtra("intent_p_img");
-        p_num = intent.getStringExtra("intent_p_num");
+        //효민이쪽에서 받아오는 인텐트
+        String path = getIntent().getStringExtra("path");
+        Log.d("인텐트 확인", path + "타단");
+        String p_name,p_company,p_otcetc,p_group,p_img,p_num,p_nae,p_weight,p_height,p_record,p_mytime,p_myday,p_user_id,p_user_time,p_user_date;
+
+        //네 그렇게 하셔야죠
+        //당연히 안되죠...아직 효민이꺼랑 연결이 안됬잖아....당연히 null이죠..
+        //효민이꺼 코드 받아 오셨어요? 아니요 그럼 아까 효민이가 무슨 코드 안 줬어용?
+        //코드가 무슨코드인지...?? 됐어요. 제가 물어볼게요.
+        //효민이가 보내는 코드는 어디겠어요. 리스트겠죠.
+
+        if(path.equals("0")){
+            // 0은 효민이가 보내는 것이에요. 이해하셨으면 네 하세요네 효민이가 보내는것을 셋텍스 하시고
+            Intent intent = getIntent();
+            p_name = intent.getStringExtra("intent_p_name");
+            p_company = intent.getStringExtra("intent_p_company");
+            p_otcetc = intent.getStringExtra("intent_p_otcetc");
+            p_group = intent.getStringExtra("intent_p_group");
+            p_img = intent.getStringExtra("intent_p_img");
+            p_num = intent.getStringExtra("intent_p_num");
+            //받아오신 값을 셋텍스트 하세요.
+
+            user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
+            task.execute();
+            //이미지 ???
+
+            p_n.setText(p_name);
+            jun.setText(p_otcetc);
+            bun.setText(p_group);
+            p_c.setText(p_company);
+
+        }else {
+            //현우님이 보내느것 현우님쪽에서 뭐 보내거든요. 그
+            //받아오신 값을 셋텍스트 하세요. 그것도 하시면되요.
+            Intent intent1 = getIntent();
+
+            p_img = intent1.getStringExtra("p_arr_img");
+            p_num = intent1.getStringExtra("p_arr_num");
+            p_name = intent1.getStringExtra("p_arr_name");
+            p_otcetc = intent1.getStringExtra("p_arr_ptcetc");
+            p_group = intent1.getStringExtra("p_arr_group");
+            p_nae= intent1.getStringExtra("p_arr_symptom");
+            p_weight = intent1.getStringExtra("p_arr_weight");
+            p_height = intent1.getStringExtra("p_arr_height");
+            p_record = intent1.getStringExtra("p_arr_record");
+            p_mytime = intent1.getStringExtra("p_arr_myalatime");
+            p_myday = intent1.getStringExtra("p_arr_myaladay");
+            p_user_id = intent1.getStringExtra("p_arr_user_id");
+            p_user_time = intent1.getStringExtra("p_arr_user_time");
+            p_user_date = intent1.getStringExtra("p_arr_user_date");
+            p_company = intent1.getStringExtra("p_arr_company");
+
+            user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
+            task.execute();
+            //이미지 ??? 넹
+
+            p_n.setText(p_name);
+            jun.setText(p_otcetc);
+            bun.setText(p_group);
+            nae.setText(p_nae);
+            weight.setText(p_weight);
+            length.setText(p_height);
+            user_record.setText(p_record);
+            mytime.setText(p_mytime);
+            date1.setText(p_myday);
+            time.setText(p_user_time);
+            day.setText(p_user_date);
+            p_c.setText(p_company);
+            ;
 
 
-        p_img_link = p_img;
 
-        p_n.setText(p_name);
-        p_c.setText(p_company);
-        jun.setText(p_otcetc);
+        }
+
+        // p_img_link = p_img;
+        //p_n.setText(p_name);
+        //p_c.setText(p_company);
+        //jun.setText(p_otcetc);
+        //bun.setText(p_group);
 
 
+        // user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
 
-
-
-        user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
-        task.execute();
 
         alarm_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -147,12 +211,13 @@ public class user_record extends AppCompatActivity {
             }
         });
 
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timeData = dataA + "~" + dataB;
                 Log.d("날짜1",timeData);
-                Log.d("날짜3", dateall);
+                Log.d("날짜3",dateall);
 
                 Log.d("날짜2",String.valueOf(data3+data4));
 
@@ -175,12 +240,19 @@ public class user_record extends AppCompatActivity {
                 // String p_length = length.getText().toString();
                 // String p_weight = weight.getText().toString();
 
+                if(path.equals("0")){
+                    //효민이가 보내는 통로에서
+                    sendRequest();
 
-                 sendRequest();
+                }else {
+                    //현우님이가 보내는 통로
+                    sendRequest1();
+                    Intent intent = new Intent(getApplicationContext(), user_record_list.class);//여기가 아니라 user_record_modify 이동 아닌가여?
 
-                Intent intent = new Intent(getApplicationContext(), user_record_list.class);
+                    startActivity(intent);
+                    //여기에 인텐트자리가 맞는지 ?
+                }
 
-                startActivity(intent);
 
 
             }
@@ -429,6 +501,7 @@ public class user_record extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
+
                     //  adapter.addItem(user_id,s_num, p_name, p_com, p_jun, p_bun,p_nae,p_date1,p_date2,p_daybreak,p_morning, p_afternoon,p_evening,p_midnight,p_time,p_day,p_length,p_weight);
                     Log.v("성공2",value);
                     if (value.equals("true")) {
@@ -478,19 +551,14 @@ public class user_record extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 //server로 데이터를 보낼 시 넣어주는 곳
 
-
                 //=======\
                 Map<String, String> params = new HashMap<String, String>();
 
-
-
-
-                params.put("drug_num", p_num);
-                params.put("drug_name", p_name);
-                params.put("otcetc", p_otcetc);
+                params.put("drug_num", dnum);
+                params.put("drug_name", p_n.getText().toString());
+                params.put("otcetc", jun.getText().toString());
                 params.put("drug_group", p_group);
-                params.put("drug_img", p_img); //인텐트에서 받아온 값
-
+                params.put("drug_img", p_img);
                 params.put("my_symptom", nae.getText().toString());
                 params.put("user_taking_date", dateall);
                 params.put("user_time", mytime.getText().toString());
@@ -503,8 +571,8 @@ public class user_record extends AppCompatActivity {
 
                 Log.v("약이름 값확인", p_n.getText().toString() + "확인");
                 Log.v("약이미지 값확인", p_img + "확인");
-                Log.v("약번호 값확인", p_num+ "확인");
-               // Log.v("유저아이디 값확인", user_id+ "확인");
+                Log.v("약번호 값확인", dnum+ "확인");
+                Log.v("유저아이디 값확인", user_id+ "확인");
                 Log.v("복용날짜 값확인", dateall+ "확인");
                 Log.v("복용시간 값확인", mytime.getText().toString()+ "확인");
                 Log.v("복용알람날짜 값확인", day.getText().toString()+ "확인");
@@ -516,6 +584,101 @@ public class user_record extends AppCompatActivity {
 
                 // params.put("p_n",.getText().toString());
                 // params.put("p_n",.getText().toString());
+                return params;
+
+            }
+        };
+
+        queue.add(stringRequest);
+    }
+
+    //수정한 값을 다시 보내주는 곳
+    private void sendRequest1() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://59.0.249.28:3000/Modify";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Server로 부터 데이터를 받아온 곳
+                Log.v("성공", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+
+                    Log.v("성공2",value);
+                    if (value.equals("true")) {
+                        Toast.makeText(user_record.this, "수정완료", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "완료버튼을 눌러주세요.", Toast.LENGTH_SHORT).show();
+//                        edt_dn.setText(""); //여기 민우님 껄로 바꾸세요.
+//                        edt_date.setText("");
+//                        edt_time.setText("");
+//                        edt_height.setText("");
+//                        edt_weight.setText("");
+//                        my_record.setText("");
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //에러발생했을때
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                return super.parseNetworkResponse(response);
+            }
+
+            ///
+            @Override
+
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("drug_num", dnum);
+                params.put("drug_name", p_n.getText().toString());
+                params.put("otcetc", jun.getText().toString());
+                params.put("drug_group", p_group);
+                params.put("drug_img", p_img);
+                params.put("my_symptom", nae.getText().toString());
+                params.put("user_taking_date", dateall);
+                params.put("user_time", mytime.getText().toString());
+                params.put("user_height", length.getText().toString());
+                params.put("user_weight", weight.getText().toString());
+                params.put("user_record", user_record.getText().toString());
+                params.put("user_myalartime", time.getText().toString());
+                params.put("user_myalartday", day.getText().toString());
+                params.put("user_id", user_id);
+
+
+                Log.v("약이름 값확인", p_n.getText().toString() + "확인");
+                Log.v("약이미지 값확인", p_img + "확인");
+                Log.v("약번호 값확인", dnum+ "확인");
+                Log.v("유저아이디 값확인", user_id+ "확인");
+                Log.v("복용날짜 값확인", dateall+ "확인");
+                Log.v("복용시간 값확인", mytime.getText().toString()+ "확인");
+                Log.v("복용알람날짜 값확인", day.getText().toString()+ "확인");
+                Log.v("복용알람시간 값확인", time.getText().toString()+ "확인");
+                Log.v("키 값확인", length.getText().toString()+ "확인");
+                Log.v("몸무게 값확인", weight.getText().toString()+ "확인");
+                Log.v("기록 값확인", user_record.getText().toString()+ "확인");
+
                 return params;
 
             }
