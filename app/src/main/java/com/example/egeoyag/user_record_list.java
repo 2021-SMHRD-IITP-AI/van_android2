@@ -3,6 +3,7 @@ package com.example.egeoyag;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -55,8 +56,24 @@ public class user_record_list extends AppCompatActivity {
     private ArrayList ListViewItemList;
     private ImageView pl_img;
     private Bitmap bitmap;
+    private String [] taking_p_arr_img;
+    private String [] taking_p_arr_num;
+    private String [] taking_p_arr_name;
+    private String [] taking_p_arr_otcetc;
+    private String [] taking_p_arr_group;
+    private String [] taking_p_arr_symptom;
+    private String [] taking_p_arr_weight;
+    private String [] taking_p_arr_height;
+    private String [] taking_p_arr_record;
+    private String [] taking_p_arr_myalatime;
+    private String [] taking_p_arr_myaladay;
+    private String [] taking_p_arr_user_id;
+    private String [] taking_p_arr_user_time;
+    private String [] taking_p_arr_user_date;
+    private String [] taking_p_arr_company;
 
-    private String id ="1";
+
+
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -74,27 +91,78 @@ public class user_record_list extends AppCompatActivity {
         }
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_input = findViewById(R.id.edt_input);
 
         pl_img = findViewById(R.id.pl_img);
         tv_name = findViewById(R.id.tv_name);
         tv_1 = findViewById(R.id.tv_1);
+
         tv_ymd = findViewById(R.id.tv_ymd);
+
+
+
         img_search = findViewById(R.id.img_search);
 
-        sendRequest();
+        sendRequest();   //2는 아직 이렇게 적지는 않았어요 위치는
 
         pillListView = findViewById(R.id.pillListView);
         adapter = new listviewadapter();
 
-        pillListView.setAdapter(adapter);
+        pillListView.setAdapter(adapter);            //이 부분이 리스트뷰 실행입니당  넹 일단 ppt 부분 해주세용~~~네네에에네에
         pillListView.setTextFilterEnabled(true);
 
+        pillListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String p_arr_img = taking_p_arr_img[position];
+                String p_arr_num = taking_p_arr_num[position];
+                String p_arr_name = taking_p_arr_name[position];
+                String p_arr_otcetc = taking_p_arr_otcetc[position];
+                String p_arr_group = taking_p_arr_group[position];
+                String p_arr_symptom = taking_p_arr_symptom[position];
+                String p_arr_weight = taking_p_arr_weight[position];
+                String p_arr_height = taking_p_arr_height[position];
+                String p_arr_record = taking_p_arr_record[position];
+                String p_arr_myalatime = taking_p_arr_myalatime[position];
+                String p_arr_myaladay = taking_p_arr_myaladay[position];
+                String p_arr_user_id = taking_p_arr_user_id[position];
+                String p_arr_user_time = taking_p_arr_user_time[position];
+                String p_arr_user_date = taking_p_arr_user_date[position];
+                String p_arr_company = taking_p_arr_company[position];
+
+                Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
+                intent.putExtra("p_arr_img", p_arr_img);
+                intent.putExtra("p_arr_num", p_arr_num);
+                intent.putExtra("p_arr_name", p_arr_name);
+                intent.putExtra("p_arr_otcetc", p_arr_otcetc);
+                intent.putExtra("p_arr_group", p_arr_group);
+                intent.putExtra("p_arr_symptom", p_arr_symptom);
+                intent.putExtra("p_arr_weight", p_arr_weight);
+                intent.putExtra("p_arr_height", p_arr_height);
+                intent.putExtra("p_arr_record", p_arr_record);
+                intent.putExtra("p_arr_myalatime", p_arr_myalatime);
+                intent.putExtra("p_arr_myaladay", p_arr_myaladay);
+                intent.putExtra("p_arr_user_id", p_arr_user_id);
+                intent.putExtra("p_arr_user_time", p_arr_user_time);
+                intent.putExtra("p_arr_user_date", p_arr_user_date);
+                intent.putExtra("p_arr_company", p_arr_company);
+
+                startActivity(intent);
+
+
+
+
+            }
+        });
 
 
         img_search.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +182,8 @@ public class user_record_list extends AppCompatActivity {
 
                         pillListView.setFilterText(edt_input.getText().toString());
                     }
+
+                    //스노우볼 스노우볼 스노우볼
 
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -142,6 +212,8 @@ public class user_record_list extends AppCompatActivity {
                     }
                 });
 
+
+
             }
         });
 
@@ -157,6 +229,8 @@ public class user_record_list extends AppCompatActivity {
         });
 
 
+
+
         pillListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -167,7 +241,13 @@ public class user_record_list extends AppCompatActivity {
             }
         });
 
+
+
+
     }
+
+
+
 
     private void updateLabel() {
         String myFormat ="yyyy/MM/dd";
@@ -190,16 +270,34 @@ public class user_record_list extends AppCompatActivity {
                 Log.v("성공",response);
                 try {
                     JSONArray array = new JSONArray(response);
+                    Log.v("성공3",response);
                     for(int i = 0; i < array.length();i++){
                         JSONObject jsonObject = array.getJSONObject(i);
 
+                        taking_p_arr_img[i] = jsonObject.getString("drug_img");
+                        taking_p_arr_num[i] = jsonObject.getString("drug_num");
+                        taking_p_arr_name[i] = jsonObject.getString("drug_name");
+                        taking_p_arr_otcetc[i] = jsonObject.getString("drug_otcetc");
+                        taking_p_arr_group[i] = jsonObject.getString("drug_group");
+                        taking_p_arr_symptom[i] = jsonObject.getString("my_symptom");
+                        taking_p_arr_weight[i] = jsonObject.getString("my_weight");
+                        taking_p_arr_height[i] = jsonObject.getString("my_height");
+                        taking_p_arr_record[i] = jsonObject.getString("my_record");
+                        taking_p_arr_myalatime[i] = jsonObject.getString("my_alarm_time");
+                        taking_p_arr_myaladay[i] = jsonObject.getString("my_alarm_day");
+                        taking_p_arr_user_id[i] = jsonObject.getString("user_id");
+                        taking_p_arr_user_time[i] = jsonObject.getString("my_time");
+                        taking_p_arr_user_date[i] = jsonObject.getString("my_date");
+                        taking_p_arr_company[i] = jsonObject.getString("drug_company");
+
+                        //여기서 모든 정보를 싹 다 받아요
 
                         String img = jsonObject.getString("drug_img");
                         String name = jsonObject.getString("drug_name");
                         String symptom1 = jsonObject.getString("drug_group");
                         String ymd = jsonObject.getString("my_date");
 
-                        Log.d("성공 제이슨 값 받아오기", img + name + symptom1 + ymd + "성공?");
+                        // Log.d("성공 제이슨 값 받아오기",  name + id + num + date + "성공?");
 
 
                         ListViewItem dto = new ListViewItem(img, name, symptom1, ymd);
@@ -209,8 +307,6 @@ public class user_record_list extends AppCompatActivity {
 
 
                     }
-
-
 
                     pillListView.setAdapter(adapter);
 
@@ -236,6 +332,8 @@ public class user_record_list extends AppCompatActivity {
 
                 // Log.v("성공",info);
                 params.put("user_id","1");
+
+
                 Log.v("성공1",edt_input.getText().toString());
                 //return super.getParams();
                 return params;
@@ -243,6 +341,11 @@ public class user_record_list extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
+
+
+//왜 스트링을 제이슨 어레이로 못바꿔 왜왜왜
+
+
 
     private class DownloadFilesTask extends AsyncTask {
         ListViewItem dto;
@@ -293,8 +396,8 @@ public class user_record_list extends AppCompatActivity {
 
 //            Bitmap bit = (Bitmap)msg.obj;
 
-//            adapter.additem(dto);
-//            pillListView.setAdapter(adapter);
+            // adapter.additem(dto);
+            //  pillListView.setAdapter(adapter);
 
             // Log.d("성공 로그찍기", dto.getDto().getName() +"/" + dto.getDto().getName() + "/"+dto.getDto().getSymptom1()+"/"+dto.getDto().getYmd());
 //
