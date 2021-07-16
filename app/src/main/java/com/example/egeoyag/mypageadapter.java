@@ -58,8 +58,9 @@ public class mypageadapter extends BaseAdapter {
     }
 
     public void addItem (Bitmap_mypageDTO gg){
-        Bitmap_mypageDTO pdto = gg;
-        mypagedtolist.add(pdto);
+        Bitmap_mypageDTO pdtoo = gg;
+        mypagedtolist.add(pdtoo);
+        notifyDataSetChanged();
 
     }
 

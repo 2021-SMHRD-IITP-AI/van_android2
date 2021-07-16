@@ -50,15 +50,12 @@ public class main extends AppCompatActivity {
     private ToggleButton tb_s_1, tb_s_2, tb_s_3, tb_s_4, tb_s_5, tb_s_6, tb_s_7, tb_s_8, tb_s_9, tb_s_10;
     private Thread t;
     private ConstraintLayout menu, l_hambuger, con_1, con_3;
-    private NavigationView l_ham;
     private PillListViewAdapter adapter = new PillListViewAdapter();
     int state_cnt = 0; // 색상/모양 버튼 누를 때 상태 파악
 
     String img_pill;
     Bitmap bitmap;
     String p_num;//약 일련번호 슬래시(/)로 구분해서 저장
-
-    int state_adapter = 0;
 
     String[] getphillnum;
     String[] arr;
@@ -71,22 +68,9 @@ public class main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //p_list = findViewById(R.id.);
 
         initial();
 
-//네비게이션 시발
-//        l_ham.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//                if(id == R.id.m_ham_1){
-//                    Intent intent = new Intent(getApplicationContext(), my_page.class);
-//                    startActivity(intent);
-//                }
-//                return true;
-//            }
-//        });
 
         m_btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -526,6 +510,8 @@ public class main extends AppCompatActivity {
                         startActivity(intent);
                         if(intent!=null){
                             con_1.setVisibility(View.VISIBLE);
+                            btn_backg.setVisibility(view.INVISIBLE);
+                            l_hambuger.setVisibility(view.INVISIBLE);
 
                         }
                     }
@@ -556,7 +542,7 @@ public class main extends AppCompatActivity {
         m_ham_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), my_page.class);
+                Intent intent = new Intent(getApplicationContext(), user_record_list.class);
                 startActivity(intent);
             }
         });

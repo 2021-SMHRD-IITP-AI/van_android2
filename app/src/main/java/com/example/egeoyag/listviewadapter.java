@@ -91,10 +91,6 @@ public class listviewadapter extends BaseAdapter implements Filterable {
     }
 
 
-
-
-
-
     @Override
     public Filter getFilter() {
         return new Filter() {
