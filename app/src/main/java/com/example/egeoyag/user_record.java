@@ -180,8 +180,6 @@ public class user_record extends AppCompatActivity {
             time.setText(p_user_time);
             day.setText(p_user_date);
             p_c.setText(p_company);
-            ;
-
 
 
         }
