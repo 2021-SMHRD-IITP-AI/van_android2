@@ -9,7 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -51,7 +53,7 @@ public class user_record_modify extends AppCompatActivity {
 
     Bitmap bitmap;
 
-    TextView btn_send; //이거 진짜 꼭 좀 고치세요. btn가 왜 te죠?
+    Button btn_send; //이거 진짜 꼭 좀 고치세요. btn가 왜 te죠?
     TextView p_n, p_c, jun, bun,  date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day, length, weight, user_record;
     EditText nae;
     TextView minus_day;
@@ -127,12 +129,36 @@ public class user_record_modify extends AppCompatActivity {
         user_record_modify.DownloadFilesTask task = new user_record_modify.DownloadFilesTask();
         task.execute();
 
-        // 현우님에게 받아온 값을 셋텍스트 하기
+        //약번호  p_num
+        String str = p_utime;              // 예시 2018/11/15~2018//11/30 으로올거임
+        String time1 = str.substring(8, str.indexOf("~"));
+        String time2 = str.substring(str.indexOf("~")+1);//2018/11/30 짤랐고
+        String time3 = time2.substring(7+1);
+
+        Log.d("날짜 확인 타임1 ",time1);
+        Log.d("날짜 확인 타임2 ",time2);
+        Log.d("날짜 확인 타임3 ",time3);
+
+        int time4 = Integer.parseInt(time3)-Integer.parseInt(time1);
+        //Integer.parseInt();
+
+
+
+        minus_day.setText(String.valueOf(time4));
+
         p_n.setText(p_name );
         p_c.setText(p_company);
-
-
-
+        jun.setText(p_otc);
+        bun.setText(p_group);
+        nae.setText(p_symp);
+        weight.setText(p_weight);
+        length.setText(p_height);
+        user_record.setText(p_record);
+        time.setText(p_utime);
+        date1.setText(p_udate);
+        mytime.setText(p_myaltime);
+        day.setText(p_myalday);
+        p_n.setText(p_name);
 
 
         btn_send.setOnClickListener(new View.OnClickListener() {
