@@ -126,7 +126,6 @@ public class search_pill_explanation extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
 
 
-
         String url = "http://59.0.249.28:3000/Drugs";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -169,12 +168,12 @@ public class search_pill_explanation extends AppCompatActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
 
-                if(arr2[0].equals("")){
-                    arr2 = new String[3];
-                    arr2[0] = "널";
-                    arr2[1] = "널";
-                    arr2[2] = "널";
-                }
+//                if(arr2[0].equals("")){
+//                    arr2 = new String[3];
+//                    arr2[0] = "정보가 부족합니다.";
+//                    arr2[1] = "정보가 부족합니다.";
+//                    arr2[2] = "정보가 부족합니다.";
+//                }
 
                 params.put("drug_name",arr[0]);
                 params.put("drug_num",spe_p_num);
@@ -183,9 +182,11 @@ public class search_pill_explanation extends AppCompatActivity {
                 params.put("drug_shape",arr3[0]);
                 params.put("drug_img",arr[2]);
                 params.put("drug_group", arr[3]);
-                params.put("drug_effect", arr2[0]);
+                params.put("drug_effect", spe_p5);
                 params.put("drug_otcetc", arr[4]);
-                params.put("drug_side_effect",arr2[2]);
+                params.put("drug_side_effect",spe_p6);
+
+                Log.d("서버 확인", spe_p_num + "왜");
 
                 return params;//네트워크끼리 데이터를 server로 보낼 때 넣어주는 곳
 
@@ -220,9 +221,9 @@ public class search_pill_explanation extends AppCompatActivity {
                 arr3 = p_data_not2.split("#");
 
                 if(p_data_e.equals("")){
-                    spe_p5 = "널";//효능(이 약은 심근 경색, 뇌 경색)
-                    spe_p6 = "널";//부작용(쇽 증상 예 호흡곤란,...)
-                    spe_p7 = "널";//용법용량(성인은 1회 1정 ~
+                    spe_p5 = "정보가 부족합니다.";//효능(이 약은 심근 경색, 뇌 경색)
+                    spe_p6 = "정보가 부족합니다.";//부작용(쇽 증상 예 호흡곤란,...)
+                    spe_p7 = "정보가 부족합니다.";//용법용량(성인은 1회 1정 ~
                 }
                 else{
                     arr2 = p_data_e.split("#");

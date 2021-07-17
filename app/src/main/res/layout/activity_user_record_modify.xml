@@ -19,20 +19,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btn_send"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1300px"
-            android:layout_marginLeft="358dp"
-            android:layout_marginTop="134px"
-            android:layout_marginEnd="58px"
-            android:layout_marginRight="28dp"
-            android:text="수정"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="134px" />
 
         <TextView
             android:id="@+id/textView12"
@@ -41,21 +33,32 @@
 
             android:text="나의 기록"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_send"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="@+id/guideline34" />
+
+        <Button
+            android:id="@+id/btn_send_modify"
+            android:layout_width="91px"
+            android:layout_height="66px"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="#1F2A83"
+            android:text="수정"
+            android:textColor="#FFFFFF"
+            android:textSize="45px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline34" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="2045px"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/Con1">
+        app:layout_constraintTop_toBottomOf="@+id/Con1">
 
         <ScrollView
             android:id="@+id/scrollView2"
@@ -471,18 +474,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/bun"
-                        android:layout_width="36dp"
-                        android:layout_height="19dp"
-                        android:layout_marginTop="80dp"
-                        android:text="분류명"
-                        android:textSize="40px"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.476"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.Guideline
@@ -532,7 +523,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_end="693px" />
+                    app:layout_constraintGuide_percent="0.5182482" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline26"
@@ -582,8 +573,8 @@
                         android:layout_marginRight="52dp"
                         android:background="@null"
                         android:ems="10"
-                        android:text="나의 상태를 기록해보세요."
                         android:inputType="textPersonName"
+                        android:text="나의 상태를 기록해보세요."
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.56"
                         app:layout_constraintStart_toStartOf="parent"

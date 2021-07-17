@@ -117,7 +117,7 @@ public class subscription_information extends AppCompatActivity {
 
     private void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url ="http://59.0.249.28:300/Join";
+        String url ="http://59.0.249.28:3000/Join";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

@@ -799,12 +799,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/m_f_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
         android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/right_58px_2"
-        app:srcCompat="@drawable/green"
-        tools:layout_editor_absoluteY="310dp" />
+        app:srcCompat="@drawable/green" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

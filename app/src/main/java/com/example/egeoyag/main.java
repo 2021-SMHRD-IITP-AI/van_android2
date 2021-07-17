@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -48,6 +49,7 @@ public class main extends AppCompatActivity {
     private EditText m_edt_s;
     private ToggleButton tb_1, tb_2, tb_3, tb_4, tb_5, tb_6, tb_7, tb_8, tb_9, tb_10, tb_11, tb_12, tb_13, tb_14, tb_15, tb_16;
     private ToggleButton tb_s_1, tb_s_2, tb_s_3, tb_s_4, tb_s_5, tb_s_6, tb_s_7, tb_s_8, tb_s_9, tb_s_10;
+    private FloatingActionButton m_f_btn;
     private Thread t;
     private ConstraintLayout menu, l_hambuger, con_1, con_3;
     private PillListViewAdapter adapter = new PillListViewAdapter();
@@ -56,6 +58,8 @@ public class main extends AppCompatActivity {
     String img_pill;
     Bitmap bitmap;
     String p_num;//약 일련번호 슬래시(/)로 구분해서 저장
+
+    String inputValue;
 
     String[] getphillnum;
     String[] arr;
@@ -486,6 +490,26 @@ public class main extends AppCompatActivity {
         });//tri
 
 
+        m_f_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                inputValue = PreferenceManager.getString(getApplicationContext(),"info");
+
+
+                if(inputValue.equals("")){
+                    Intent intent = new Intent(getApplicationContext(), join.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"의약품을 검색해주세요.",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
         m_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -575,6 +599,8 @@ public class main extends AppCompatActivity {
         btn_backg = findViewById(R.id.btn_backg);
 
         m_hambuger = findViewById(R.id.m_hambuger);
+
+        m_f_btn = findViewById(R.id.m_f_btn);
 
 
         m_ham_1 = findViewById(R.id.m_ham_1);

@@ -54,8 +54,8 @@ public class user_record_modify extends AppCompatActivity {
     Bitmap bitmap;
 
     Button btn_send; //이거 진짜 꼭 좀 고치세요. btn가 왜 te죠?
-    TextView p_n, p_c, jun, bun,  date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day, length, weight, user_record;
-    EditText nae;
+    TextView p_n, p_c, jun, nae,  date1, date2, mytime, daybreak, morning, afternoon, evening, midnight, time, day, length, weight, user_record;
+
     TextView minus_day;
     int cnt1, cnt2, cnt3, cnt4, cnt5;
     private RequestQueue queue; //요청하는 개체
@@ -76,7 +76,6 @@ public class user_record_modify extends AppCompatActivity {
         p_n = findViewById(R.id.p_n);
         p_c = findViewById(R.id.p_c);
         jun = findViewById(R.id.jun);
-        bun = findViewById(R.id.bun);
         nae = findViewById(R.id.nae);
         date1 = findViewById(R.id.date1);
         date2 = findViewById(R.id.date2);
@@ -102,8 +101,6 @@ public class user_record_modify extends AppCompatActivity {
 
 
         alarm_switch.setChecked(true);
-
-
 
 
 
@@ -149,7 +146,6 @@ public class user_record_modify extends AppCompatActivity {
         p_n.setText(p_name );
         p_c.setText(p_company);
         jun.setText(p_otc);
-        bun.setText(p_group);
         nae.setText(p_symp);
         weight.setText(p_weight);
         length.setText(p_height);

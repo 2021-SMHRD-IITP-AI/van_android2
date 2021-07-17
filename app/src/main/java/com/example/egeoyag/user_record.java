@@ -32,8 +32,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,14 +59,14 @@ public class user_record extends AppCompatActivity {
 //    private String mysy = "나의증사아아앙아";
     private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
 
-    private String p_name, p_company, p_otcetc, p_group, p_img, p_num;
+    private String p_name, p_company, p_otcetc, p_group, p_img, p_num, p_user_id;
     private ImageView ur_p_img;
 
     int minday,data3,data4;
     String recordmytime ;
 
 
-    private String user_id = "김효매";
+    private String user_id;
     Bitmap bitmap;
 
     Button btn_send;
@@ -115,7 +117,8 @@ public class user_record extends AppCompatActivity {
         //효민이쪽에서 받아오는 인텐트
         String path = getIntent().getStringExtra("path");
         Log.d("인텐트 확인", path + "타단");
-        String p_name,p_company,p_otcetc,p_group,p_img,p_num,p_nae,p_weight,p_height,p_record,p_mytime,p_myday,p_user_id,p_user_time,p_user_date;
+        String p_otcetc,p_nae,p_weight,p_height,p_record,p_mytime,p_myday,p_user_time,p_user_date;
+
 
         //네 그렇게 하셔야죠
         //당연히 안되죠...아직 효민이꺼랑 연결이 안됬잖아....당연히 null이죠..
@@ -133,14 +136,23 @@ public class user_record extends AppCompatActivity {
             p_img = intent.getStringExtra("intent_p_img");
             p_num = intent.getStringExtra("intent_p_num");
             //받아오신 값을 셋텍스트 하세요.
-
+            p_img_link = p_img;
             user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
             task.execute();
-            //이미지 ???
+
+            String inputValue = PreferenceManager.getString(getApplicationContext(),"info");
+
+            try {
+                JSONObject jsonObject = new JSONObject(inputValue);
+                user_id = jsonObject.getString("id");
+
+            } catch (JSONException e) {
+
+                e.printStackTrace();
+            }
 
             p_n.setText(p_name);
             jun.setText(p_otcetc);
-            bun.setText(p_group);
             p_c.setText(p_company);
 
         }else {
@@ -168,9 +180,10 @@ public class user_record extends AppCompatActivity {
             task.execute();
             //이미지 ??? 넹
 
+            p_img_link = p_img;
+
             p_n.setText(p_name);
             jun.setText(p_otcetc);
-            bun.setText(p_group);
             nae.setText(p_nae);
             weight.setText(p_weight);
             length.setText(p_height);
@@ -184,7 +197,7 @@ public class user_record extends AppCompatActivity {
 
         }
 
-        // p_img_link = p_img;
+
         //p_n.setText(p_name);
         //p_c.setText(p_company);
         //jun.setText(p_otcetc);
@@ -219,28 +232,13 @@ public class user_record extends AppCompatActivity {
 
                 Log.d("날짜2",String.valueOf(data3+data4));
 
-                //  String user_id = user.getText().toString();
-                // String s_num= num.getText().toString();
-                // String p_name = p_n.getText().toString();
-                // String p_com = p_c.getText().toString();
-                // String p_jun = jun.getText().toString();
-                // String p_bun = bun.getText().toString();
-                // String p_nae = nae.getText().toString();
-                // String p_date1 = date1.getText().toString();
-                // String p_date2 = date2.getText().toString();
-                // String p_daybreak = daybreak.getText().toString();
-                // String p_morning = morning.getText().toString();
-                // String p_afternoon = afternoon.getText().toString();
-                // String p_evening = evening.getText().toString();
-                // String p_midnight = midnight.getText().toString();
-                // String p_time = time.getText().toString();
-                // String p_day = day.getText().toString();
-                // String p_length = length.getText().toString();
-                // String p_weight = weight.getText().toString();
 
                 if(path.equals("0")){
                     //효민이가 보내는 통로에서
                     sendRequest();
+                    Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
+
+                    startActivity(intent);
 
                 }else {
                     //현우님이가 보내는 통로
@@ -552,7 +550,8 @@ public class user_record extends AppCompatActivity {
                 //=======\
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("drug_num", dnum);
+
+                params.put("drug_num", p_num);//짜잔
                 params.put("drug_name", p_n.getText().toString());
                 params.put("otcetc", jun.getText().toString());
                 params.put("drug_group", p_group);
@@ -725,7 +724,7 @@ public class user_record extends AppCompatActivity {
         @Override
         protected Object doInBackground(Object[] objects) {
             try {
-                URL url = new URL(p_img+"");
+                URL url = new URL(p_img_link+"");
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 bitmap = BitmapFactory.decodeStream(con.getInputStream());
 
