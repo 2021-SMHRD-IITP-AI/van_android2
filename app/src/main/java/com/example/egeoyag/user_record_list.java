@@ -47,6 +47,26 @@ import java.util.Map;
 
 public class user_record_list extends AppCompatActivity {
 
+    private  String []  taking_p_arr_img = new String[100];
+    private String [] taking_p_arr_num = new String[100];
+    private String [] taking_p_arr_name= new String[100];
+    private String [] taking_p_arr_otcetc= new String[100];
+    private String [] taking_p_arr_group= new String[100];
+    private String [] taking_p_arr_symptom= new String[100];
+    private String [] taking_p_arr_weight= new String[100];
+    private String [] taking_p_arr_height= new String[100];
+    private String [] taking_p_arr_record= new String[100];
+    private String [] taking_p_arr_myalatime= new String[100];
+    private String [] taking_p_arr_myaladay= new String[100];
+    private String [] taking_p_arr_user_id= new String[100];
+    private String [] taking_p_arr_user_time= new String[100];
+    private String [] taking_p_arr_user_date= new String[100];
+    private String [] taking_p_arr_company= new String[100];
+
+
+
+
+
     private ListView pillListView;
     private Button btn_date;
     private TextView tv_ymd,tv_name,tv_1;
@@ -56,21 +76,21 @@ public class user_record_list extends AppCompatActivity {
     private ArrayList ListViewItemList;
     private ImageView pl_img;
     private Bitmap bitmap;
-    private String [] taking_p_arr_img;
-    private String [] taking_p_arr_num;
-    private String [] taking_p_arr_name;
-    private String [] taking_p_arr_otcetc;
-    private String [] taking_p_arr_group;
-    private String [] taking_p_arr_symptom;
-    private String [] taking_p_arr_weight;
-    private String [] taking_p_arr_height;
-    private String [] taking_p_arr_record;
-    private String [] taking_p_arr_myalatime;
-    private String [] taking_p_arr_myaladay;
-    private String [] taking_p_arr_user_id;
-    private String [] taking_p_arr_user_time;
-    private String [] taking_p_arr_user_date;
-    private String [] taking_p_arr_company;
+//    private String [] taking_p_arr_img;
+//    private String [] taking_p_arr_num;
+//    private String [] taking_p_arr_name;
+//    private String [] taking_p_arr_otcetc;
+//    private String [] taking_p_arr_group;
+//    private String [] taking_p_arr_symptom;
+//    private String [] taking_p_arr_weight;
+//    private String [] taking_p_arr_height;
+//    private String [] taking_p_arr_record;
+//    private String [] taking_p_arr_myalatime;
+//    private String [] taking_p_arr_myaladay;
+//    private String [] taking_p_arr_user_id;
+//    private String [] taking_p_arr_user_time;
+//    private String [] taking_p_arr_user_date;
+//    private String [] taking_p_arr_company;
 
 
 
@@ -97,6 +117,7 @@ public class user_record_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_input = findViewById(R.id.edt_input);
 
@@ -182,7 +203,7 @@ public class user_record_list extends AppCompatActivity {
                         pillListView.setFilterText(edt_input.getText().toString());
                     }
 
-                    //스노우볼 스노우볼 스노우볼
+                    // 스노우볼 스노우볼 스노우볼
 
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -330,7 +351,7 @@ public class user_record_list extends AppCompatActivity {
                 // String info = PreferenceManager.getString(getApplicationContext(),"info");
 
                 // Log.v("성공",info);
-                params.put("user_id","1");
+                params.put("user_id","반반");
 
 
                 Log.v("성공1",edt_input.getText().toString());
@@ -414,8 +435,3 @@ public class user_record_list extends AppCompatActivity {
 
 
 }
-
-
-
-
-
