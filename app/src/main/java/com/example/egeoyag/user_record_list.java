@@ -61,7 +61,7 @@ public class user_record_list extends AppCompatActivity {
     private String [] taking_p_arr_user_id= new String[100];
     private String [] taking_p_arr_user_time= new String[100];
     private String [] taking_p_arr_user_date= new String[100];
-    private String [] taking_p_arr_company= new String[100];
+    //private String [] taking_p_arr_company= new String[100];
 
 
 
@@ -117,7 +117,6 @@ public class user_record_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_input = findViewById(R.id.edt_input);
 
@@ -157,7 +156,7 @@ public class user_record_list extends AppCompatActivity {
                 String p_arr_user_id = taking_p_arr_user_id[position];
                 String p_arr_user_time = taking_p_arr_user_time[position];
                 String p_arr_user_date = taking_p_arr_user_date[position];
-                String p_arr_company = taking_p_arr_company[position];
+//                String p_arr_company = taking_p_arr_company[position];
 
                 Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
                 intent.putExtra("p_arr_img", p_arr_img);
@@ -174,7 +173,8 @@ public class user_record_list extends AppCompatActivity {
                 intent.putExtra("p_arr_user_id", p_arr_user_id);
                 intent.putExtra("p_arr_user_time", p_arr_user_time);
                 intent.putExtra("p_arr_user_date", p_arr_user_date);
-                intent.putExtra("p_arr_company", p_arr_company);
+                intent.putExtra("state","팽팽");
+             //   intent.putExtra("p_arr_company", p_arr_company);
 
                 startActivity(intent);
 
@@ -308,7 +308,7 @@ public class user_record_list extends AppCompatActivity {
                         taking_p_arr_user_id[i] = jsonObject.getString("user_id");
                         taking_p_arr_user_time[i] = jsonObject.getString("my_time");
                         taking_p_arr_user_date[i] = jsonObject.getString("my_date");
-                        taking_p_arr_company[i] = jsonObject.getString("drug_company");
+                     //   taking_p_arr_company[i] = jsonObject.getString("drug_company");
 
                         //여기서 모든 정보를 싹 다 받아요
 

@@ -410,7 +410,7 @@ public class search_pill_explanation extends AppCompatActivity {
         return buffer.toString();//StringBuffer 문자열 객체 반환
     }//낱알 API 호출
 
-    private String getPhillData2(String pnum) {//낱알 API 호출
+    private String getPhillData2(String pnum) {
         StringBuffer buffer = new StringBuffer();
 
         String serviceKey = "ieYMfcOiIIb28pQBQRdpDmTt4XPNvN5FCsff1zf6nEIDPpuDig2iHxcw%2B9N%2BCZNUB4tOg%2BavRPcIyi4s5HGL3A%3D%3D";

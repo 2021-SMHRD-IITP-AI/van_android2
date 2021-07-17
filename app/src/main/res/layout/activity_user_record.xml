@@ -154,6 +154,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="80dp" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="1324.46px"
                         android:layout_height="1244.2px"
@@ -168,11 +175,11 @@
                             android:id="@+id/alarm_switch"
                             android:layout_width="160px"
                             android:layout_height="71.92px"
-                            android:layout_marginTop="180px"
+                            android:layout_marginTop="14dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginRight="16dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/midnight" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                         <TextView
                             android:id="@+id/textView"
@@ -182,13 +189,13 @@
                             android:layout_marginLeft="2dp"
                             android:gravity="center"
                             android:text="~"
-                            app:layout_constraintEnd_toStartOf="@+id/date2"
+                            app:layout_constraintEnd_toStartOf="@+id/ur_date_end"
                             app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@+id/date1"
-                            app:layout_constraintTop_toTopOf="@+id/date1" />
+                            app:layout_constraintStart_toEndOf="@+id/urm_date_start"
+                            app:layout_constraintTop_toTopOf="@+id/urm_date_start" />
 
                         <TextView
-                            android:id="@+id/date2"
+                            android:id="@+id/ur_date_end"
                             android:layout_width="429px"
                             android:layout_height="74px"
                             android:layout_marginStart="15dp"
@@ -196,36 +203,36 @@
                             android:layout_marginTop="96dp"
                             android:hint="날짜를 입력해주세요"
                             android:textSize="50px"
-                            app:layout_constraintStart_toEndOf="@+id/date1"
+                            app:layout_constraintStart_toEndOf="@+id/urm_date_start"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <EditText
-                            android:id="@+id/length"
+                            android:id="@+id/ur_height"
                             android:layout_width="627px"
                             android:layout_height="176px"
-                            android:layout_marginTop="28dp"
+                            android:layout_marginTop="60dp"
                             android:ems="10"
                             android:gravity="bottom|end"
                             android:hint="키 입력"
                             android:inputType="textPersonName"
                             android:textSize="50px"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/time" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                         <EditText
-                            android:id="@+id/weight"
+                            android:id="@+id/ur_weigth"
                             android:layout_width="627px"
                             android:layout_height="176px"
                             android:layout_marginStart="196dp"
                             android:layout_marginLeft="196dp"
-                            android:layout_marginTop="102dp"
+                            android:layout_marginTop="60dp"
                             android:ems="10"
                             android:gravity="bottom|end"
                             android:hint="몸무게 입력"
                             android:inputType="textPersonName"
                             android:textSize="50px"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/afternoon" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                         <TextView
                             android:id="@+id/textView10"
@@ -242,11 +249,12 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/date1"
+                            android:id="@+id/ur_date_start"
                             android:layout_width="429px"
                             android:layout_height="74px"
                             android:layout_marginTop="96dp"
                             android:hint="날짜를 입력해주세요"
+                            android:textColor="#B4B2B2"
                             android:textSize="50px"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -254,7 +262,20 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/minus_day"
+                            android:id="@+id/ur_date_endd"
+                            android:layout_width="429px"
+                            android:layout_height="74px"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="96dp"
+                            android:hint="날짜를 입력해주세요"
+                            android:textColor="#B4B2B2"
+                            android:textSize="50px"
+                            app:layout_constraintStart_toEndOf="@+id/ur_date_end"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/ur_date_minus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="96dp"
@@ -279,7 +300,7 @@
                                 tools:layout_editor_absoluteY="-2dp">
 
                                 <EditText
-                                    android:id="@+id/nae"
+                                    android:id="@+id/ur_mysymptom"
                                     android:layout_width="350px"
                                     android:layout_height="148px"
                                     android:layout_weight="1"
@@ -311,7 +332,7 @@
                             android:id="@+id/textView19"
                             android:layout_width="226px"
                             android:layout_height="58px"
-                            android:layout_marginTop="25dp"
+                            android:layout_marginTop="60dp"
                             android:layout_marginEnd="314dp"
                             android:layout_marginRight="314dp"
                             android:text="복용 알람"
@@ -319,12 +340,11 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/daybreak"
 
-                            />
+                            app:layout_constraintTop_toBottomOf="@+id/my_time" />
 
                         <TextView
-                            android:id="@+id/time"
+                            android:id="@+id/ur_alarmtime"
                             android:layout_width="wrap_content"
                             android:layout_height="58px"
                             android:layout_marginTop="14dp"
@@ -338,21 +358,21 @@
                             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                         <TextView
-                            android:id="@+id/day"
+                            android:id="@+id/ur_alarmday"
                             android:layout_width="226px"
                             android:layout_height="58px"
                             android:layout_marginStart="80dp"
                             android:layout_marginLeft="80dp"
-                            android:layout_marginTop="60dp"
+                            android:layout_marginTop="14dp"
                             android:text="요일선택"
                             android:textSize="50px"
-                            app:layout_constraintBottom_toBottomOf="@+id/time"
+                            app:layout_constraintBottom_toBottomOf="@+id/urm_alarmtime"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/morning"
+                            app:layout_constraintTop_toBottomOf="@+id/textView19"
                             app:layout_constraintVertical_bias="1.0" />
 
                         <TextView
-                            android:id="@+id/daybreak"
+                            android:id="@+id/ur_takingtime1"
                             android:layout_width="245px"
                             android:layout_height="74px"
                             android:layout_marginTop="15dp"
@@ -361,14 +381,14 @@
                             android:text="기상직후"
                             android:textColor="#000000"
                             android:textSize="40px"
-                            app:layout_constraintEnd_toStartOf="@+id/morning"
+                            app:layout_constraintEnd_toStartOf="@+id/ur_takingtime2"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/my_time" />
                         <!--                        android:background="@drawable/selector_record"-->
 
                         <TextView
-                            android:id="@+id/morning"
+                            android:id="@+id/ur_takingtime2"
                             android:layout_width="245px"
                             android:layout_height="74px"
                             android:background="@drawable/recordmytime"
@@ -376,13 +396,14 @@
                             android:text="아침"
                             android:textColor="#000000"
                             android:textSize="40px"
-                            app:layout_constraintEnd_toStartOf="@+id/afternoon"
+                            app:layout_constraintBottom_toBottomOf="@+id/ur_takingtime1"
+                            app:layout_constraintEnd_toStartOf="@+id/ur_takingtime3"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/daybreak"
-                            app:layout_constraintTop_toTopOf="@+id/daybreak" />
+                            app:layout_constraintStart_toEndOf="@+id/ur_takingtime1"
+                            app:layout_constraintTop_toTopOf="@+id/ur_takingtime1" />
 
                         <TextView
-                            android:id="@+id/afternoon"
+                            android:id="@+id/ur_takingtime3"
                             android:layout_width="245px"
                             android:layout_height="74px"
                             android:background="@drawable/recordmytime"
@@ -390,13 +411,14 @@
                             android:text="점심"
                             android:textColor="#000000"
                             android:textSize="40px"
-                            app:layout_constraintEnd_toStartOf="@+id/evening"
+                            app:layout_constraintBottom_toBottomOf="@+id/ur_takingtime2"
+                            app:layout_constraintEnd_toStartOf="@+id/ur_takingtime4"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/morning"
-                            app:layout_constraintTop_toTopOf="@+id/morning" />
+                            app:layout_constraintStart_toEndOf="@+id/ur_takingtime2"
+                            app:layout_constraintTop_toTopOf="@+id/ur_takingtime2" />
 
                         <TextView
-                            android:id="@+id/evening"
+                            android:id="@+id/ur_takingtime4"
                             android:layout_width="245px"
                             android:layout_height="74px"
                             android:background="@drawable/recordmytime"
@@ -404,13 +426,14 @@
                             android:text="저녁"
                             android:textColor="#000000"
                             android:textSize="40px"
-                            app:layout_constraintEnd_toStartOf="@+id/midnight"
+                            app:layout_constraintBottom_toBottomOf="@+id/ur_takingtime3"
+                            app:layout_constraintEnd_toStartOf="@+id/ur_takingtime5"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/afternoon"
-                            app:layout_constraintTop_toTopOf="@+id/afternoon" />
+                            app:layout_constraintStart_toEndOf="@+id/ur_takingtime3"
+                            app:layout_constraintTop_toTopOf="@+id/ur_takingtime3" />
 
                         <TextView
-                            android:id="@+id/midnight"
+                            android:id="@+id/ur_takingtime5"
                             android:layout_width="245px"
                             android:layout_height="74px"
                             android:background="@drawable/recordmytime"
@@ -418,31 +441,26 @@
                             android:text="취침전"
                             android:textColor="#000000"
                             android:textSize="40px"
+                            app:layout_constraintBottom_toBottomOf="@+id/ur_takingtime4"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/evening"
-                            app:layout_constraintTop_toTopOf="@+id/evening" />
-                        <!--                        android:background="@drawable/selector_record"-->
+                            app:layout_constraintStart_toEndOf="@+id/ur_takingtime4"
+                            app:layout_constraintTop_toTopOf="@+id/ur_takingtime4" />
 
-
-                        <TextView
-                            android:id="@+id/textView22"
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline35"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginLeft="2dp"
-                            android:layout_marginTop="29dp"
-                            android:layout_marginEnd="363dp"
-                            android:layout_marginRight="363dp"
-                            android:text="키"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/time" />
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_begin="296dp" />
+
+                        <!--                        android:background="@drawable/selector_record"-->
+
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/p_n"
+                        android:id="@+id/ur_pname"
                         android:layout_width="371px"
                         android:layout_height="119px"
                         android:layout_marginTop="40dp"
@@ -454,28 +472,26 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/p_c"
+                        android:id="@+id/ur_pcompany"
                         android:layout_width="307px"
                         android:layout_height="74px"
-                        android:layout_marginTop="6dp"
                         android:text="Pill_company"
                         android:textSize="50px"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.049"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/p_n" />
+                        app:layout_constraintTop_toTopOf="@+id/guideline36" />
 
                     <TextView
-                        android:id="@+id/jun"
+                        android:id="@+id/ur_potcetc"
                         android:layout_width="wrap_content"
                         android:layout_height="59px"
-                        android:layout_marginTop="80dp"
                         android:text="전문의약"
                         android:textSize="40px"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.329"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="@+id/guideline36" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -566,7 +582,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
-                        android:id="@+id/user_record"
+                        android:id="@+id/ur_myrecord"
                         android:layout_width="1324px"
                         android:layout_height="241px"
                         android:layout_marginStart="63dp"

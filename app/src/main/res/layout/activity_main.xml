@@ -191,6 +191,20 @@
             app:layout_constraintTop_toBottomOf="@+id/m_edt_s"
             app:strokeColor="#FFFFFF" />
 
+        <ToggleButton
+            android:id="@+id/main_toggle"
+            android:layout_width="83dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="ToggleButton"
+            android:textOff="이름으로 검색"
+            android:textOn="효능으로 검색"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/m_edt_s"
+            app:layout_constraintStart_toStartOf="@+id/left_58px_5"
+            app:layout_constraintTop_toTopOf="@+id/textv_up" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -643,7 +657,7 @@
         android:layout_width="926px"
         android:layout_height="2560px"
         android:background="#FFFFFF"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

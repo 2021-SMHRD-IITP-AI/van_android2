@@ -32,10 +32,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -68,6 +66,7 @@ public class user_record extends AppCompatActivity {
 
     private String user_id;
     Bitmap bitmap;
+    TextView et_time;
 
     Button btn_send;
     EditText nae,length, weight,user_record;
@@ -87,28 +86,30 @@ public class user_record extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_record);
-        day = findViewById(R.id.day);
+        day = findViewById(R.id.urm_alarmday);
         //dnum = findViewById(R.id.dnum);
         ur_p_img = findViewById(R.id.ur_p_img); //이미지 뷰 이름
-        p_n = findViewById(R.id.p_n);
-        p_c = findViewById(R.id.p_c);
-        jun = findViewById(R.id.jun);
-        nae = findViewById(R.id.nae);
-        date1 = findViewById(R.id.date1);
-        date2 = findViewById(R.id.date2);
+        p_n = findViewById(R.id.ur_pname);
+        p_c = findViewById(R.id.ur_pcompany);
+        jun = findViewById(R.id.ur_potcetc);
+        nae = findViewById(R.id.ur_mysymptom);
+        date1 = findViewById(R.id.ur_date_start);
+        date2 = findViewById(R.id.ur_date_end);
         mytime=findViewById(R.id.my_time);
-        daybreak = findViewById(R.id.daybreak);
-        morning = findViewById(R.id.morning);
-        afternoon = findViewById(R.id.afternoon);
-        evening = findViewById(R.id.evening);
-        midnight = findViewById(R.id.midnight);
-        time = findViewById(R.id.time);
-        day = findViewById(R.id.day);
-        length = findViewById(R.id.length);
-        weight = findViewById(R.id.weight);
-        user_record=findViewById(R.id.user_record);
+        daybreak = findViewById(R.id.ur_takingtime1);
+        morning = findViewById(R.id.ur_takingtime1);
+        afternoon = findViewById(R.id.ur_takingtime3);
+        evening = findViewById(R.id.ur_takingtime4);
+        midnight = findViewById(R.id.ur_takingtime5);
+        time = findViewById(R.id.ur_alarmtime);
+        day = findViewById(R.id.ur_alarmday);
+        length = findViewById(R.id.ur_height);
+        weight = findViewById(R.id.ur_weigth);
+        user_record=findViewById(R.id.ur_myrecord);
+        et_time=findViewById(R.id.ur_alarmtime);
 
-        minus_day=findViewById(R.id.minus_day);
+
+        minus_day=findViewById(R.id.ur_date_minus);
 
         btn_send = findViewById(R.id.btn_send);
 
@@ -227,42 +228,41 @@ public class user_record extends AppCompatActivity {
             public void onClick(View v) {
                 timeData = dataA + "~" + dataB;
                 Log.d("날짜1",timeData);
-                Log.d("날짜3",dateall);
+
 
                 Log.d("날짜2",String.valueOf(data3+data4));
+
+                Intent intent_from_user_record = new Intent(getApplicationContext(), user_record_modify.class);
+                intent_from_user_record.putExtra("p_ur_img", p_img);
+                intent_from_user_record.putExtra("p_name", p_n.getText().toString());
+                intent_from_user_record.putExtra("p_company",p_company);
+                intent_from_user_record.putExtra("p_otcetc", p_otcetc);
+                intent_from_user_record.putExtra("p_group",p_group);
+                intent_from_user_record.putExtra("p_my_symptom", nae.getText().toString());
+                intent_from_user_record.putExtra("p_taking_date",dateall);
+                intent_from_user_record.putExtra("p_user_time",mytime.getText().toString());
+                intent_from_user_record.putExtra("p_user_height",length.getText().toString());
+                intent_from_user_record.putExtra("p_user_weight",weight.getText().toString());
+                intent_from_user_record.putExtra("p_user_record", user_record.getText().toString());
+                intent_from_user_record.putExtra("p_user_myalartime", time.getText().toString());
+                intent_from_user_record.putExtra("p_user_myalartday", day.getText().toString());
+                intent_from_user_record.putExtra("p_num",p_num);
+                intent_from_user_record.putExtra("user_id", user_id);
+                intent_from_user_record.putExtra("state","응애");
 
 
                 if(path.equals("0")){
                     sendRequest();
 
 
-                    Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
-                    intent.putExtra("p_ur_img", p_img);
-                    intent.putExtra("p_name", p_n.getText().toString());
-                    intent.putExtra("p_company",p_company);
-                    intent.putExtra("p_otcetc", p_otcetc);
-                    intent.putExtra("p_group",p_group);
-                    intent.putExtra("p_my_symptom", nae.getText().toString());
-                    intent.putExtra("p_taking_date",dateall);
-                    intent.putExtra("p_user_time",mytime.getText().toString());
-                    intent.putExtra("p_user_height",length.getText().toString());
-                    intent.putExtra("p_user_weight",weight.getText().toString());
-                    intent.putExtra("p_user_record", user_record.getText().toString());
-                    intent.putExtra("p_user_myalartime", time.getText().toString());
-                    intent.putExtra("p_user_myalartday", day.getText().toString());
-                    intent.putExtra("p_num",p_num);
-                    intent.putExtra("user_id", user_id);
-
-
-
-                    startActivity(intent);
+                    startActivity(intent_from_user_record);
 
                 }else {
                     //현우님이가 보내는 통로
                     sendRequest1();
-                    Intent intent = new Intent(getApplicationContext(), user_record_list.class);//여기가 아니라 user_record_modify 이동 아닌가여?
-
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), user_record_list.class);//여기가 아니라 user_record_modify 이동 아닌가여?
+//
+//                    startActivity(intent);
                     //여기에 인텐트자리가 맞는지 ?
                 }
 
@@ -297,7 +297,8 @@ public class user_record extends AppCompatActivity {
         });
 
 
-        final TextView et_time = (TextView) findViewById(R.id.time);
+
+
         et_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -448,7 +449,7 @@ public class user_record extends AppCompatActivity {
         SimpleDateFormat sdf2 = new SimpleDateFormat(myFormat2, Locale.KOREA);
 
 
-        TextView et_date = (TextView) findViewById(R.id.date1);
+        TextView et_date = (TextView) findViewById(R.id.ur_date_start);
         et_date.setText(sdf.format(myCalendar.getTime()));
         data1 = sdf2.format(myCalendar.getTime());
         dataA = sdf.format(myCalendar.getTime());
@@ -461,7 +462,7 @@ public class user_record extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.KOREA);
         SimpleDateFormat sdf2 = new SimpleDateFormat(myFormat2, Locale.KOREA);
 
-        TextView et_date2 = (TextView) findViewById(R.id.date2);
+        TextView et_date2 = (TextView) findViewById(R.id.ur_date_end);
         et_date2.setText(sdf.format(myCalendar2.getTime()));
         data2 = sdf2.format(myCalendar2.getTime());
 

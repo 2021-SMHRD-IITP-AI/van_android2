@@ -47,13 +47,14 @@ public class main extends AppCompatActivity {
     private Button m_btn_1, m_btn_2, btn_backg;
     private ImageButton m_submit, m_hambuger, m_ham_1, m_ham_2, m_ham_3;
     private EditText m_edt_s;
-    private ToggleButton tb_1, tb_2, tb_3, tb_4, tb_5, tb_6, tb_7, tb_8, tb_9, tb_10, tb_11, tb_12, tb_13, tb_14, tb_15, tb_16;
+    private ToggleButton tb_1, tb_2, tb_3, tb_4, tb_5, tb_6, tb_7, tb_8, tb_9, tb_10, tb_11, tb_12, tb_13, tb_14, tb_15, tb_16, main_toggle;
     private ToggleButton tb_s_1, tb_s_2, tb_s_3, tb_s_4, tb_s_5, tb_s_6, tb_s_7, tb_s_8, tb_s_9, tb_s_10;
     private FloatingActionButton m_f_btn;
     private Thread t;
     private ConstraintLayout menu, l_hambuger, con_1, con_3;
     private PillListViewAdapter adapter = new PillListViewAdapter();
     int state_cnt = 0; // 색상/모양 버튼 누를 때 상태 파악
+    private String main_state;
 
     String img_pill;
     Bitmap bitmap;
@@ -68,13 +69,14 @@ public class main extends AppCompatActivity {
     String datas = "";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initial();
-
+        main_state = "1";
 
         m_btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -546,6 +548,19 @@ public class main extends AppCompatActivity {
 
         });
 
+        main_toggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(main_toggle.isChecked()){
+                    main_state ="0"; //효능
+                }
+                else{
+                    main_state ="1"; //이름
+                }
+
+            }
+        });
+
 
         m_hambuger.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -601,6 +616,8 @@ public class main extends AppCompatActivity {
         m_hambuger = findViewById(R.id.m_hambuger);
 
         m_f_btn = findViewById(R.id.m_f_btn);
+
+        main_toggle = findViewById(R.id.main_toggle);
 
 
         m_ham_1 = findViewById(R.id.m_ham_1);
@@ -731,58 +748,114 @@ public class main extends AppCompatActivity {
     private String getPhilNumber() {
         StringBuffer buffer = new StringBuffer();
 
+        String queryUrl;
+
         String serviceKey = "ieYMfcOiIIb28pQBQRdpDmTt4XPNvN5FCsff1zf6nEIDPpuDig2iHxcw%2B9N%2BCZNUB4tOg%2BavRPcIyi4s5HGL3A%3D%3D";
         String str = m_edt_s.getText().toString();
         String item_name = URLEncoder.encode(str);
 
 
-        String queryUrl = "http://apis.data.go.kr/1470000/MdcinGrnIdntfcInfoService/getMdcinGrnIdntfcInfoList?" +
-                "ServiceKey=" + serviceKey + "&item_name=" + item_name;
-        // +"&DRUG_SHAPE=" + p_shpape +"&COLOR_CLASS1=" + p_color;
 
-        try {
-            URL url = new URL(queryUrl);//문자열로 된 요청 url을 URL 객체로 생성.
-            InputStream is = url.openStream(); //url위치로 입력스트림 연결
+        if(main_state.equals("0")){
+            queryUrl ="http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?" +
+                    "serviceKey=" +serviceKey + "&efcyQesitm=" + item_name;
 
-            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-            XmlPullParser xpp = factory.newPullParser();
-            xpp.setInput(new InputStreamReader(is, "UTF-8")); //inputstream 으로부터 xml 입력받기
+            try {
+                URL url = new URL(queryUrl);//문자열로 된 요청 url을 URL 객체로 생성.
+                InputStream is = url.openStream(); //url위치로 입력스트림 연결
 
-            String tag;
-            xpp.next();
-            int eventType = xpp.getEventType();
+                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+                XmlPullParser xpp = factory.newPullParser();
+                xpp.setInput(new InputStreamReader(is, "UTF-8")); //inputstream 으로부터 xml 입력받기
 
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        break;
+                String tag;
+                xpp.next();
+                int eventType = xpp.getEventType();
 
-                    case XmlPullParser.START_TAG:
-                        tag = xpp.getName();//태그 이름 얻어오기
+                while (eventType != XmlPullParser.END_DOCUMENT) {
+                    switch (eventType) {
+                        case XmlPullParser.START_DOCUMENT:
+                            break;
 
-                        if (tag.equals("ITEM_SEQ")) {
-                            buffer.append("");
-                            xpp.next();
-                            buffer.append(xpp.getText());
-                            buffer.append("@");
-                        }
+                        case XmlPullParser.START_TAG:
+                            tag = xpp.getName();//태그 이름 얻어오기
 
-                        break;
-                    case XmlPullParser.TEXT:
-                        break;
+                            if (tag.equals("itemSeq")) {
+                                buffer.append("");
+                                xpp.next();
+                                buffer.append(xpp.getText());
+                                buffer.append("@");
+                            }
+                            break;
+                        case XmlPullParser.TEXT:
+                            break;
 
-                    case XmlPullParser.END_TAG:
-                        tag = xpp.getName();
-                        if (tag.equals("item_name")) buffer.append("\n");
-                        break;
+                        case XmlPullParser.END_TAG:
+                            tag = xpp.getName();
+                            if (tag.equals("item_name")) buffer.append("\n");
+                            break;
+                    }
+                    eventType = xpp.next();
                 }
-                eventType = xpp.next();
+
+            } catch (Exception e) {
+                // TODO Auto-generated catch blocke.printStackTrace();
             }
 
-        } catch (Exception e) {
-            // TODO Auto-generated catch blocke.printStackTrace();
+
         }
-        return buffer.toString();//StringBuffer 문자열 객체 반환
+        else{
+            queryUrl = "http://apis.data.go.kr/1470000/MdcinGrnIdntfcInfoService/getMdcinGrnIdntfcInfoList?" +
+                         "ServiceKey=" + serviceKey + "&item_name=" + item_name;
+
+            try {
+                URL url = new URL(queryUrl);//문자열로 된 요청 url을 URL 객체로 생성.
+                InputStream is = url.openStream(); //url위치로 입력스트림 연결
+
+                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+                XmlPullParser xpp = factory.newPullParser();
+                xpp.setInput(new InputStreamReader(is, "UTF-8")); //inputstream 으로부터 xml 입력받기
+
+                String tag;
+                xpp.next();
+                int eventType = xpp.getEventType();
+
+                while (eventType != XmlPullParser.END_DOCUMENT) {
+                    switch (eventType) {
+                        case XmlPullParser.START_DOCUMENT:
+                            break;
+
+                        case XmlPullParser.START_TAG:
+                            tag = xpp.getName();//태그 이름 얻어오기
+
+                            if (tag.equals("ITEM_SEQ")) {
+                                buffer.append("");
+                                xpp.next();
+                                buffer.append(xpp.getText());
+                                buffer.append("@");
+                            }
+
+                            break;
+                        case XmlPullParser.TEXT:
+                            break;
+
+                        case XmlPullParser.END_TAG:
+                            tag = xpp.getName();
+                            if (tag.equals("item_name")) buffer.append("\n");
+                            break;
+                    }
+                    eventType = xpp.next();
+                }
+
+            } catch (Exception e) {
+                // TODO Auto-generated catch blocke.printStackTrace();
+            }
+        }
+
+        return buffer.toString();
+        
+
+        
     }//의약품 일련번호 가져오기
 
     private String getPhillData1(String pnum) {//낱알 API 호출
