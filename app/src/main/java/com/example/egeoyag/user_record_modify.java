@@ -37,9 +37,9 @@ public class user_record_modify extends AppCompatActivity {
     private String dnum;
     private String p_g;
     private String mysy;
-    private String p_img, p_name,p_comp,p_group,p_otc,p_symp,p_date,p_time,p_mytime,p_myday,p_height,p_weight,p_record,p_user_id,p_num;
     private String data1, data2, dataA, dataB, timeData, dateall, p_img_link;
     private ImageView ur_p_img2;
+    private String p_num, p_img, p_name, p_company, p_otcetc, p_group, p_taking_date, p_user_time, p_user_height, p_user_weight, p_user_record, p_user_myalartime,p_my_symptom, p_user_myalartday;
 
     int minday, data3, data4;
 
@@ -103,23 +103,23 @@ public class user_record_modify extends AppCompatActivity {
         alarm_switch.setChecked(true);
 
 
-
         Intent intent = getIntent();
-        String p_img = intent.getStringExtra("p_arr_img");
-        String p_num = intent.getStringExtra("p_arr_num");
-        String p_name = intent.getStringExtra("p_arr_name");
-        String p_company = intent.getStringExtra("p_arr_company");
-        String p_otc = intent.getStringExtra("p_arr_otcetc");
-        String p_group = intent.getStringExtra("p_arr_group");
-        String p_symp = intent.getStringExtra("p_arr_symptom");
-        String p_weight = intent.getStringExtra("p_arr_weight");
-        String p_height = intent.getStringExtra("p_arr_height");
-        String p_record = intent.getStringExtra("p_arr_record");
-        String p_myaltime = intent.getStringExtra("p_arr_myalatime");
-        String p_myalday = intent.getStringExtra("p_arr_myalady");
-        String p_uid = intent.getStringExtra("p_arr_user_id");
-        String p_utime = intent.getStringExtra("p_arr_user_time");
-        String p_udate = intent.getStringExtra("p_arr_user_date");
+        user_id = intent.getStringExtra("user_id");
+        p_num = intent.getStringExtra("p_num");
+        p_img = intent.getStringExtra("p_img");
+        p_name = intent.getStringExtra("p_name");
+        p_company = intent.getStringExtra("p_company");
+        p_otcetc = intent.getStringExtra("p_otcetc");
+        p_group = intent.getStringExtra("p_group");
+        p_my_symptom = intent.getStringExtra("p_my_symptom");
+        p_taking_date = intent.getStringExtra("p_taking_date");
+        p_user_time = intent.getStringExtra("p_user_time");
+        p_user_height = intent.getStringExtra("p_user_height");
+        p_user_weight = intent.getStringExtra("p_user_weight");
+        p_user_record = intent.getStringExtra("p_user_record");
+        p_user_myalartime = intent.getStringExtra("p_user_myalartime");
+        p_user_myalartday = intent.getStringExtra("p_user_myalartday");
+
 
         p_img_link = p_img;
 
@@ -127,7 +127,7 @@ public class user_record_modify extends AppCompatActivity {
         task.execute();
 
         //약번호  p_num
-        String str = p_utime;              // 예시 2018/11/15~2018//11/30 으로올거임
+        String str = p_taking_date;              // 예시 2018/11/15~2018//11/30 으로올거임
         String time1 = str.substring(8, str.indexOf("~"));
         String time2 = str.substring(str.indexOf("~")+1);//2018/11/30 짤랐고
         String time3 = time2.substring(7+1);
@@ -143,17 +143,19 @@ public class user_record_modify extends AppCompatActivity {
 
         minus_day.setText(String.valueOf(time4));
 
+
+
         p_n.setText(p_name );
         p_c.setText(p_company);
-        jun.setText(p_otc);
-        nae.setText(p_symp);
-        weight.setText(p_weight);
-        length.setText(p_height);
-        user_record.setText(p_record);
-        time.setText(p_utime);
-        date1.setText(p_udate);
-        mytime.setText(p_myaltime);
-        day.setText(p_myalday);
+        jun.setText(p_otcetc);
+        nae.setText(p_my_symptom);
+        weight.setText(p_user_weight);
+        length.setText(p_user_height);
+        user_record.setText(p_user_record);
+        time.setText(p_user_myalartime);
+        date1.setText(time1);
+        mytime.setText(time2);
+        day.setText(time4);
         p_n.setText(p_name);
 
 
@@ -166,17 +168,17 @@ public class user_record_modify extends AppCompatActivity {
                 intent1.putExtra("p_num",p_num);
                 intent1.putExtra("p_name",p_name);
                 intent1.putExtra("p_company",p_company);
-                intent1.putExtra("p_otc",p_otc);
+                intent1.putExtra("p_otc",p_otcetc);
                 intent1.putExtra("p_group",p_group);
-                intent1.putExtra("p_symp",p_symp);
-                intent1.putExtra("p_weight",p_weight);
-                intent1.putExtra("p_height",p_height);
-                intent1.putExtra("p_record",p_record);
-                intent1.putExtra("p_myaltime",p_myaltime);
-                intent1.putExtra("p_myalday",p_myalday);
-                intent1.putExtra("p_uid",p_uid);
-                intent1.putExtra("p_utime",p_utime);
-                intent1.putExtra("p_udate",p_udate);
+                intent1.putExtra("p_symp",p_my_symptom);
+                intent1.putExtra("p_weight",p_user_weight);
+                intent1.putExtra("p_height",p_user_height);
+                intent1.putExtra("p_record",p_user_record);
+                intent1.putExtra("p_myaltime",p_user_myalartime);
+                intent1.putExtra("p_myalday",p_user_myalartday);
+                intent1.putExtra("p_uid",user_id);
+//                intent1.putExtra("p_utime",p_utime); //수정해야해ㅐ해ㅐ해수정수정
+//                intent1.putExtra("p_udate",p_udate);
                 startActivity(intent1);
             }
         });

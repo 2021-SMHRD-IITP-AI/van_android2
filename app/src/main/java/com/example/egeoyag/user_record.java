@@ -178,7 +178,6 @@ public class user_record extends AppCompatActivity {
 
             user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
             task.execute();
-            //이미지 ??? 넹
 
             p_img_link = p_img;
 
@@ -234,9 +233,27 @@ public class user_record extends AppCompatActivity {
 
 
                 if(path.equals("0")){
-                    //효민이가 보내는 통로에서
                     sendRequest();
+
+
                     Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
+                    intent.putExtra("p_ur_img", p_img);
+                    intent.putExtra("p_name", p_n.getText().toString());
+                    intent.putExtra("p_company",p_company);
+                    intent.putExtra("p_otcetc", p_otcetc);
+                    intent.putExtra("p_group",p_group);
+                    intent.putExtra("p_my_symptom", nae.getText().toString());
+                    intent.putExtra("p_taking_date",dateall);
+                    intent.putExtra("p_user_time",mytime.getText().toString());
+                    intent.putExtra("p_user_height",length.getText().toString());
+                    intent.putExtra("p_user_weight",weight.getText().toString());
+                    intent.putExtra("p_user_record", user_record.getText().toString());
+                    intent.putExtra("p_user_myalartime", time.getText().toString());
+                    intent.putExtra("p_user_myalartday", day.getText().toString());
+                    intent.putExtra("p_num",p_num);
+                    intent.putExtra("user_id", user_id);
+
+
 
                     startActivity(intent);
 
