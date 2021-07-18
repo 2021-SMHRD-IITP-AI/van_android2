@@ -27,9 +27,11 @@
 
     <TextView
         android:id="@+id/tv_ymd"
-        android:layout_width="205px"
+        android:layout_width="240px"
         android:layout_height="56px"
-        android:layout_marginTop="44px"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="114px"
         android:gravity="center"
         android:text="YYYY.MM.DD"
@@ -41,8 +43,8 @@
 
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="800px"
-        android:layout_height="78px"
+        android:layout_width="700px"
+        android:layout_height="70px"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="7dp"

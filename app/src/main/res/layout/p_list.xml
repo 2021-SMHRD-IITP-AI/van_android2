@@ -27,7 +27,7 @@
         <TextView
             android:id="@+id/l_p_name"
             android:layout_width="1025px"
-            android:layout_height="96px"
+            android:layout_height="0dp"
             android:text="pill_name"
             app:layout_constraintEnd_toStartOf="@+id/guideline14"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
@@ -36,7 +36,8 @@
         <TextView
             android:id="@+id/l_p_company"
             android:layout_width="1025px"
-            android:layout_height="96px"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
             android:text="pill_company"
             app:layout_constraintEnd_toStartOf="@+id/guideline14"
             app:layout_constraintHorizontal_bias="0.0"
@@ -82,6 +83,7 @@
             android:id="@+id/l_p_eff1"
             android:layout_width="0dp"
             android:layout_height="20dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/btn_round"
             android:foregroundGravity="center_vertical|center_horizontal"
             android:gravity="center_horizontal|center_vertical"
