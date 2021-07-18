@@ -64,6 +64,8 @@ public class user_record_list extends AppCompatActivity {
     //private String [] taking_p_arr_company= new String[100];
 
 
+    private String rl_user_id;
+
 
 
 
@@ -342,10 +344,17 @@ public class user_record_list extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 //Server로 데이터를 보낼 시 넣어주는 곳
                 Map<String,String> params = new HashMap<String,String>();
-                // String info = PreferenceManager.getString(getApplicationContext(),"info");
+               String info = PreferenceManager.getString(getApplicationContext(),"info");
+                try {
+                    JSONObject jsonObject = new JSONObject(info);
+                    rl_user_id = jsonObject.getString("id");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                 // Log.v("성공",info);
-                params.put("user_id","반반");
+                params.put("user_id",rl_user_id);
 
 
                 Log.v("성공1",edt_input.getText().toString());
