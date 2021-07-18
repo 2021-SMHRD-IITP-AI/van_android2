@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="@+id/gl_1" />
 
         <Button
-            android:id="@+id/nurm_btn"
+            android:id="@+id/nurm_btn2"
             android:layout_width="91px"
             android:layout_height="66px"
             android:layout_marginEnd="17dp"
@@ -75,6 +75,7 @@
                     android:id="@+id/nurm_img"
                     android:layout_width="1440px"
                     android:layout_height="701px"
+                    android:layout_marginTop="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -210,7 +211,7 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/nurm_taking_date4"
+                        android:id="@+id/nurm_alarmday"
                         android:layout_width="0dp"
                         android:layout_height="17dp"
                         android:layout_marginStart="25dp"

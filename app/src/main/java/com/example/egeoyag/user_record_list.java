@@ -261,13 +261,7 @@ public class user_record_list extends AppCompatActivity {
             }
         });
 
-
-
-
     }
-
-
-
 
     private void updateLabel() {
         String myFormat ="yyyy/MM/dd";

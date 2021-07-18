@@ -25,15 +25,15 @@ import java.net.URL;
 
 public class new_user_record_modify extends AppCompatActivity {
 
-    private TextView nurm_pname,nurm_pcompany,nurm_potcetc,nurm_mysymptom,nurm_taking_date,nurm_taking_day,nurm_takingtime1,nurm_takingtime2,nurm_takingtime3,nurm_takingtime4,nurm_takingtime5,nurm_alarmtime,nurm_taking_date4,nurm_height,nurm_height2,nurm_myrecor;
+    private TextView nurm_alarmday, nurm_pname,nurm_pcompany,nurm_potcetc,nurm_mysymptom,nurm_taking_date,nurm_taking_day,nurm_takingtime1,nurm_takingtime2,nurm_takingtime3,nurm_takingtime4,nurm_takingtime5,nurm_alarmtime,nurm_taking_date4,nurm_height,nurm_height2,nurm_myrecor;
 
-    private ImageView urm_p_img;
+    private ImageView nurm_img;
 
     private String urm_s_pimg, urm_s_pname, urm_s_pcompany, urm_s_potcetc, urm_s_pgroup, urm_s_mysymptom, urm_s_date,
             urm_s_day, urm_s_height, urm_s_weight, urm_s_myrecord, urm_s_alarmtime, urm_s_alarmday, urm_s_pnum, urm_s_userid;
 
     private String p_img_link;
-    private Button btn_send;
+    private Button nurm_btn2;
 
     Bitmap bitmap;
 
@@ -114,18 +114,18 @@ public class new_user_record_modify extends AppCompatActivity {
         nurm_taking_date.setText(urm_s_date);
         nurm_taking_day.setText(urm_s_day);
         nurm_takingtime1.setText(urm_s_day);
-        nurm_takingtime2.setText(urm_s_day);
-        nurm_takingtime3.setText(urm_s_day);
-        nurm_takingtime4.setText(urm_s_day);
-        nurm_takingtime5.setText(urm_s_day);
+//        nurm_takingtime2.setText(urm_s_day);
+//        nurm_takingtime3.setText(urm_s_day);
+//        nurm_takingtime4.setText(urm_s_day);
+//        nurm_takingtime5.setText(urm_s_day);
         nurm_alarmtime.setText(urm_s_alarmtime);
-        nurm_taking_date4.setText(urm_s_alarmday);
+        nurm_alarmday.setText(urm_s_alarmday);
         nurm_height.setText(urm_s_height);
         nurm_height2.setText(urm_s_weight);
         nurm_myrecor.setText(urm_s_myrecord);
 
 
-        btn_send.setOnClickListener(new View.OnClickListener() {
+        nurm_btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent_send_ur = new Intent(getApplicationContext(),user_record.class);
@@ -165,10 +165,12 @@ public class new_user_record_modify extends AppCompatActivity {
         nurm_takingtime4 = findViewById(R.id.nurm_takingtime4);
         nurm_takingtime5 = findViewById(R.id.nurm_takingtime5);
         nurm_alarmtime = findViewById(R.id.nurm_alarmtime);
-        nurm_taking_date4 = findViewById(R.id.nurm_taking_date4);
+        nurm_alarmday = findViewById(R.id.nurm_alarmday);
         nurm_height = findViewById(R.id.nurm_height);
         nurm_height2 = findViewById(R.id.nurm_height2);
         nurm_myrecor = findViewById(R.id.nurm_myrecor);
+        nurm_btn2 = findViewById(R.id.nurm_btn2);
+        nurm_img = findViewById(R.id.nurm_img);
 
     }
 
@@ -206,7 +208,7 @@ public class new_user_record_modify extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             Bitmap bit = (Bitmap) msg.obj;
-            urm_p_img.setImageBitmap(bit);
+            nurm_img.setImageBitmap(bit);
         }
     };
 }
