@@ -229,7 +229,7 @@ public class user_record extends AppCompatActivity {
 
                 Log.d("날짜2",String.valueOf(data3+data4));
 
-                Intent intent_from_user_record = new Intent(getApplicationContext(), user_record_modify.class);
+                Intent intent_from_user_record = new Intent(getApplicationContext(), new_user_record_modify.class);
                 intent_from_user_record.putExtra("p_ur_img", p_img);
                 intent_from_user_record.putExtra("p_name", p_n.getText().toString());
                 intent_from_user_record.putExtra("p_company",p_company);

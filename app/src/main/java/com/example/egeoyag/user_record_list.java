@@ -158,7 +158,7 @@ public class user_record_list extends AppCompatActivity {
                 String p_arr_user_date = taking_p_arr_user_date[position];
 //                String p_arr_company = taking_p_arr_company[position];
 
-                Intent intent = new Intent(getApplicationContext(), user_record_modify.class);
+                Intent intent = new Intent(getApplicationContext(), new_user_record_modify.class);
                 intent.putExtra("p_arr_img", p_arr_img);
                 intent.putExtra("p_arr_num", p_arr_num);
                 intent.putExtra("p_arr_name", p_arr_name);

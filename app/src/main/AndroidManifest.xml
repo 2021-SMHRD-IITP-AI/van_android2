@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.egeoyag" >
+    package="com.example.egeoyag">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -9,12 +9,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Egeoyag" >
-<!--android:networkSecurityConfig="@xml/network_config"-->
-<!--왜 ㅜ -->
+        android:theme="@style/Theme.Egeoyag"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".new_user_record_modify"></activity>
+        <!-- android:networkSecurityConfig="@xml/network_config" -->
+        <!-- 왜 ㅜ -->
         <activity android:name=".favorites" />
         <activity android:name=".family" />
         <activity android:name=".user_record_modify" />
@@ -27,7 +28,7 @@
         <activity android:name=".search_pill_explanation" />
         <activity android:name=".search_pill_list" />
         <activity android:name=".main" />
-        <activity android:name=".splash" >
+        <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +42,6 @@
         <activity android:name=".subscription_information" />
         <activity android:name=".join" />
         <activity android:name=".login" />
-
     </application>
 
 </manifest>

@@ -13,8 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -25,53 +23,32 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class user_record_modify extends AppCompatActivity {
-
-    private String img;
-    private String user_id;
-    private String dnum;
-    private String p_g;
-    private String mysy;
-    private String data1, data2, dataA, dataB, timeData, dateall, p_img_link;
-    private ImageView urm_p_img;
-
+public class new_user_record_modify extends AppCompatActivity {
 
     private TextView urm_pname, urm_pcompany, urm_otcetc, urm_mysymptom, urm_date_start, urm_date_end,urm_takingtime1, urm_takingtime2, urm_takingtime3, urm_takingtime4, urm_takingtime5, urm_alarmtime, urm_alarmday,urm_height, urm_weigth, urm_myrecord;
+
+    private ImageView urm_p_img;
 
     private String urm_s_pimg, urm_s_pname, urm_s_pcompany, urm_s_potcetc, urm_s_pgroup, urm_s_mysymptom, urm_s_date,
             urm_s_day, urm_s_height, urm_s_weight, urm_s_myrecord, urm_s_alarmtime, urm_s_alarmday, urm_s_pnum, urm_s_userid;
 
-
-
-    int minday, data3, data4;
-
-
+    private String p_img_link;
+    private Button btn_send;
 
     Bitmap bitmap;
 
-    Button btn_send; //이거 진짜 꼭 좀 고치세요. btn가 왜 te죠?
-
-
-
     private RequestQueue queue; //요청하는 개체
     private StringRequest stringRequest; // queue가 정보를 통해서...
-    private ListView recordListview;
-   // private user_record_listAdapter adapter;
-    private String path = "1"; // 모디피에서 다시 레코드로 넘어갈때.
 
-    Switch alarm_switch;
+    private String path = "1"; // 모디피에서 다시 레코드로 넘어갈때.
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_record);
-
+        setContentView(R.layout.activity_new_user_record_modify);
 
         initial();
-
-
-
 
         Intent intent = getIntent();//user_record_list에서 받아온 인텐트
         String urm_state = intent.getStringExtra("state");
@@ -123,7 +100,7 @@ public class user_record_modify extends AppCompatActivity {
 
         p_img_link = urm_s_pimg;
 
-        user_record_modify.DownloadFilesTask task = new user_record_modify.DownloadFilesTask();
+        new_user_record_modify.DownloadFilesTask task = new new_user_record_modify.DownloadFilesTask();
         task.execute();
 
 
@@ -148,8 +125,6 @@ public class user_record_modify extends AppCompatActivity {
         urm_myrecord.setText(urm_s_myrecord);
 
 
-
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,12 +142,22 @@ public class user_record_modify extends AppCompatActivity {
                 intent_send_ur.putExtra("p_record",urm_s_myrecord );
                 intent_send_ur.putExtra("p_myaltime",urm_s_alarmtime );
                 intent_send_ur.putExtra("p_myalday",urm_s_alarmday );
-                intent_send_ur.putExtra("p_uid",user_id);
+                intent_send_ur.putExtra("p_uid",urm_s_userid);
 
 
                 startActivity(intent_send_ur);
             }
         });
+
+
+
+
+
+
+
+
+
+
 
     }
 
@@ -192,9 +177,7 @@ public class user_record_modify extends AppCompatActivity {
         urm_alarmday = findViewById(R.id.urm_alarmday);
         urm_p_img = findViewById(R.id.urm_p_img);
         btn_send = findViewById(R.id.btn_send_modify);
-
     }
-
 
     private class DownloadFilesTask extends AsyncTask {
 
@@ -234,3 +217,4 @@ public class user_record_modify extends AppCompatActivity {
         }
     };
 }
+
