@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline34"
+            android:id="@+id/guideline342"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -30,7 +30,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline34" />
+            app:layout_constraintTop_toTopOf="@+id/guideline342" />
 
         <Button
             android:id="@+id/btn_send_modify"
@@ -43,7 +43,7 @@
             android:textColor="#FFFFFF"
             android:textSize="45px"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline34" />
+            app:layout_constraintTop_toTopOf="@+id/guideline342" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

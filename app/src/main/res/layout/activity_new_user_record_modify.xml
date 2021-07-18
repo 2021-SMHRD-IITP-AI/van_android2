@@ -4,6 +4,374 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".new_user_record_modify">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nurm_con1"
+        android:layout_width="1440px"
+        android:layout_height="260px"
+        android:background="#1F2A83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="134px" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나의 기록"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_1" />
+
+        <Button
+            android:id="@+id/nurm_btn"
+            android:layout_width="91px"
+            android:layout_height="66px"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="#1F2A83"
+            android:text="완료"
+            android:textColor="#FFFFFF"
+            android:textSize="45px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nurm_con2"
+        android:layout_width="match_parent"
+        android:layout_height="2300px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nurm_con1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="1440px"
+                android:layout_height="01px"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/nurm_img"
+                    android:layout_width="1440px"
+                    android:layout_height="701px"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="1440px"
+                    android:layout_height="2000px"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nurm_img">
+
+                    <TextView
+                        android:id="@+id/takingtakingdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="20dp"
+                        android:text="복용날짜"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_mysymptom" />
+
+                    <TextView
+                        android:id="@+id/takingtakingdate3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="20dp"
+                        android:text="복용시간"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_taking_date" />
+
+                    <TextView
+                        android:id="@+id/nurm_alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="20dp"
+                        android:text="복용알람"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_takingtime1" />
+
+                    <TextView
+                        android:id="@+id/nurm_alarm4"
+                        android:layout_width="0dp"
+                        android:layout_height="100px"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="25dp"
+                        android:text="나의 상태 기록"
+                        android:textSize="70px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_alarm2" />
+
+                    <TextView
+                        android:id="@+id/nurm_alarm2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="20dp"
+                        android:text="키 : "
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_alarmtime" />
+
+                    <TextView
+                        android:id="@+id/nurm_alarm3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginStart="108dp"
+                        android:layout_marginLeft="108dp"
+                        android:text="몸무게 : "
+                        android:textSize="50px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_height"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_height" />
+
+                    <TextView
+                        android:id="@+id/nurm_taking_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="5dp"
+                        android:text="0000.00.00 ~ 0000.00.00"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/takingtakingdate" />
+
+                    <TextView
+                        android:id="@+id/nurm_alarmtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="5dp"
+                        android:text="PM 00:00"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_alarm" />
+
+                    <TextView
+                        android:id="@+id/nurm_myrecor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginTop="10dp"
+                        android:text="나의 상태를 기록해보세요"
+                        android:textSize="50px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_alarm4" />
+
+                    <TextView
+                        android:id="@+id/nurm_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="000"
+                        android:textSize="50px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_alarm2"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_alarm2"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_alarm2" />
+
+                    <TextView
+                        android:id="@+id/nurm_height2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="74px"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="000"
+                        android:textSize="50px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_alarm2"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_alarm3"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_alarm2"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/nurm_taking_date4"
+                        android:layout_width="0dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:text="ㅇ요일"
+                        android:textSize="50px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_alarmtime"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_alarmtime"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_alarm" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="58px" />
+
+                    <TextView
+                        android:id="@+id/nurm_pname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:text="phill_name"
+                        android:textColor="#000000"
+                        android:textSize="80px"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline39"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="58px" />
+
+                    <TextView
+                        android:id="@+id/nurm_pcompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Pill_company"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_pname" />
+
+                    <TextView
+                        android:id="@+id/nurm_potcetc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:text="potcptc"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_pcompany"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_pcompany"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_pcompany" />
+
+                    <TextView
+                        android:id="@+id/nurm_mysymptom"
+                        android:layout_width="330px"
+                        android:layout_height="148px"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/recordnae"
+                        android:gravity="center"
+                        android:text="내 증상"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/nurm_pcompany" />
+
+                    <TextView
+                        android:id="@+id/nurm_taking_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="day"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_taking_date"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline39"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_taking_date" />
+
+                    <TextView
+                        android:id="@+id/nurm_takingtime4"
+                        android:layout_width="245px"
+                        android:layout_height="74px"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/recordmytime"
+                        android:gravity="center"
+                        android:text="저녁"
+                        android:textColor="#000000"
+                        android:textSize="40px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_takingtime3"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_takingtime3"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_takingtime3" />
+
+                    <TextView
+                        android:id="@+id/nurm_takingtime1"
+                        android:layout_width="245px"
+                        android:layout_height="74px"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/recordmytime"
+                        android:gravity="center"
+                        android:text="기상직후"
+                        android:textColor="#000000"
+                        android:textSize="40px"
+                        app:layout_constraintStart_toStartOf="@+id/guideline40"
+                        app:layout_constraintTop_toBottomOf="@+id/takingtakingdate3" />
+
+                    <TextView
+                        android:id="@+id/nurm_takingtime2"
+                        android:layout_width="245px"
+                        android:layout_height="74px"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/recordmytime"
+                        android:gravity="center"
+                        android:text="아침"
+                        android:textColor="#000000"
+                        android:textSize="40px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_takingtime1"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_takingtime1"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_takingtime1" />
+
+                    <TextView
+                        android:id="@+id/nurm_takingtime3"
+                        android:layout_width="245px"
+                        android:layout_height="74px"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/recordmytime"
+                        android:gravity="center"
+                        android:text="점심"
+                        android:textColor="#000000"
+                        android:textSize="40px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_takingtime2"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_takingtime2"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_takingtime2" />
+
+                    <TextView
+                        android:id="@+id/nurm_takingtime5"
+                        android:layout_width="245px"
+                        android:layout_height="74px"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/recordmytime"
+                        android:gravity="center"
+                        android:text="취침전"
+                        android:textColor="#000000"
+                        android:textSize="40px"
+                        app:layout_constraintBottom_toBottomOf="@+id/nurm_takingtime4"
+                        app:layout_constraintStart_toEndOf="@+id/nurm_takingtime4"
+                        app:layout_constraintTop_toTopOf="@+id/nurm_takingtime4"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="701px" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -120,9 +120,9 @@ public class new_user_record_modify extends AppCompatActivity {
         urm_takingtime5.setText(urm_s_day);
         urm_alarmtime.setText(urm_s_alarmtime);
         urm_alarmday.setText(urm_s_day);
-        urm_height.setText(urm_s_height);
-        urm_weigth.setText(urm_s_weight);
-        urm_myrecord.setText(urm_s_myrecord);
+//        urm_height.setText(urm_s_height);
+//        urm_weigth.setText(urm_s_weight);
+//        urm_myrecord.setText(urm_s_myrecord);
 
 
         btn_send.setOnClickListener(new View.OnClickListener() {
@@ -163,20 +163,20 @@ public class new_user_record_modify extends AppCompatActivity {
 
     private void initial() {
 
-        urm_pname = findViewById(R.id.urm_pname);
-        urm_pcompany = findViewById(R.id.urm_pcompany);
-        urm_otcetc = findViewById(R.id.urm_potcetc);
-        urm_mysymptom = findViewById(R.id.urm_mysymptom);
-        urm_date_start = findViewById(R.id.urm_date_start);
-        urm_takingtime1 = findViewById(R.id.urm_takingtime1);
-        urm_takingtime2 = findViewById(R.id.urm_takingtime2);
-        urm_takingtime3 = findViewById(R.id.urm_takingtime3);
-        urm_takingtime4 = findViewById(R.id.urm_takingtime4);
-        urm_takingtime5 = findViewById(R.id.urm_takingtime5);
-        urm_alarmtime = findViewById(R.id.urm_alarmtime);
-        urm_alarmday = findViewById(R.id.urm_alarmday);
-        urm_p_img = findViewById(R.id.urm_p_img);
-        btn_send = findViewById(R.id.btn_send_modify);
+        urm_pname = findViewById(R.id.nurm_pname);
+        urm_pcompany = findViewById(R.id.nurm_pcompany);
+        urm_otcetc = findViewById(R.id.nurm_potcetc);
+        urm_mysymptom = findViewById(R.id.nurm_mysymptom);
+        urm_date_start = findViewById(R.id.nurm_taking_date);
+        urm_takingtime1 = findViewById(R.id.nurm_takingtime1);
+        urm_takingtime2 = findViewById(R.id.nurm_takingtime2);
+        urm_takingtime3 = findViewById(R.id.nurm_takingtime3);
+        urm_takingtime4 = findViewById(R.id.nurm_takingtime4);
+        urm_takingtime5 = findViewById(R.id.nurm_takingtime5);
+        urm_alarmtime = findViewById(R.id.nurm_alarmtime);
+        urm_alarmday = findViewById(R.id.nurm_taking_day);
+        urm_p_img = findViewById(R.id.nurm_img);
+        btn_send = findViewById(R.id.nurm_btn);
     }
 
     private class DownloadFilesTask extends AsyncTask {
