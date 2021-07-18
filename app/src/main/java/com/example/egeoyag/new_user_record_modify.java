@@ -25,7 +25,7 @@ import java.net.URL;
 
 public class new_user_record_modify extends AppCompatActivity {
 
-    private TextView urm_pname, urm_pcompany, urm_otcetc, urm_mysymptom, urm_date_start, urm_date_end,urm_takingtime1, urm_takingtime2, urm_takingtime3, urm_takingtime4, urm_takingtime5, urm_alarmtime, urm_alarmday,urm_height, urm_weigth, urm_myrecord;
+    private TextView nurm_pname,nurm_pcompany,nurm_potcetc,nurm_mysymptom,nurm_taking_date,nurm_taking_day,nurm_takingtime1,nurm_takingtime2,nurm_takingtime3,nurm_takingtime4,nurm_takingtime5,nurm_alarmtime,nurm_taking_date4,nurm_height,nurm_height2,nurm_myrecor;
 
     private ImageView urm_p_img;
 
@@ -107,22 +107,22 @@ public class new_user_record_modify extends AppCompatActivity {
         //Integer.parseInt();
         Log.d("인텐트", urm_s_pname + "이름값이 있나용?");
 
-
-        urm_pname.setText(urm_s_pname);
-        urm_pcompany.setText(urm_s_pcompany);
-        urm_otcetc.setText(urm_s_potcetc);
-        urm_mysymptom.setText(urm_s_mysymptom);
-        urm_date_start.setText(urm_s_date);
-        urm_takingtime1.setText(urm_s_day);
-        urm_takingtime2.setText(urm_s_day);
-        urm_takingtime3.setText(urm_s_day);
-        urm_takingtime4.setText(urm_s_day);
-        urm_takingtime5.setText(urm_s_day);
-        urm_alarmtime.setText(urm_s_alarmtime);
-        urm_alarmday.setText(urm_s_day);
-//        urm_height.setText(urm_s_height);
-//        urm_weigth.setText(urm_s_weight);
-//        urm_myrecord.setText(urm_s_myrecord);
+        nurm_pname.setText(urm_s_pname);
+        nurm_pcompany.setText(urm_s_pcompany);
+        nurm_potcetc.setText(urm_s_potcetc);
+        nurm_mysymptom.setText(urm_s_mysymptom);
+        nurm_taking_date.setText(urm_s_date);
+        nurm_taking_day.setText(urm_s_day);
+        nurm_takingtime1.setText(urm_s_day);
+        nurm_takingtime2.setText(urm_s_day);
+        nurm_takingtime3.setText(urm_s_day);
+        nurm_takingtime4.setText(urm_s_day);
+        nurm_takingtime5.setText(urm_s_day);
+        nurm_alarmtime.setText(urm_s_alarmtime);
+        nurm_taking_date4.setText(urm_s_alarmday);
+        nurm_height.setText(urm_s_height);
+        nurm_height2.setText(urm_s_weight);
+        nurm_myrecor.setText(urm_s_myrecord);
 
 
         btn_send.setOnClickListener(new View.OnClickListener() {
@@ -150,33 +150,26 @@ public class new_user_record_modify extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
     }
 
     private void initial() {
+        nurm_pname = findViewById(R.id.nurm_pname);
+        nurm_pcompany = findViewById(R.id.nurm_pcompany);
+        nurm_potcetc = findViewById(R.id.nurm_potcetc);
+        nurm_mysymptom = findViewById(R.id.nurm_mysymptom);
+        nurm_taking_date = findViewById(R.id.nurm_taking_date);
+        nurm_taking_day = findViewById(R.id.nurm_taking_day);
+        nurm_takingtime1 = findViewById(R.id.nurm_takingtime1);
+        nurm_takingtime2 = findViewById(R.id.nurm_takingtime2);
+        nurm_takingtime3 = findViewById(R.id.nurm_takingtime3 );
+        nurm_takingtime4 = findViewById(R.id.nurm_takingtime4);
+        nurm_takingtime5 = findViewById(R.id.nurm_takingtime5);
+        nurm_alarmtime = findViewById(R.id.nurm_alarmtime);
+        nurm_taking_date4 = findViewById(R.id.nurm_taking_date4);
+        nurm_height = findViewById(R.id.nurm_height);
+        nurm_height2 = findViewById(R.id.nurm_height2);
+        nurm_myrecor = findViewById(R.id.nurm_myrecor);
 
-        urm_pname = findViewById(R.id.nurm_pname);
-        urm_pcompany = findViewById(R.id.nurm_pcompany);
-        urm_otcetc = findViewById(R.id.nurm_potcetc);
-        urm_mysymptom = findViewById(R.id.nurm_mysymptom);
-        urm_date_start = findViewById(R.id.nurm_taking_date);
-        urm_takingtime1 = findViewById(R.id.nurm_takingtime1);
-        urm_takingtime2 = findViewById(R.id.nurm_takingtime2);
-        urm_takingtime3 = findViewById(R.id.nurm_takingtime3);
-        urm_takingtime4 = findViewById(R.id.nurm_takingtime4);
-        urm_takingtime5 = findViewById(R.id.nurm_takingtime5);
-        urm_alarmtime = findViewById(R.id.nurm_alarmtime);
-        urm_alarmday = findViewById(R.id.nurm_taking_day);
-        urm_p_img = findViewById(R.id.nurm_img);
-        btn_send = findViewById(R.id.nurm_btn);
     }
 
     private class DownloadFilesTask extends AsyncTask {
