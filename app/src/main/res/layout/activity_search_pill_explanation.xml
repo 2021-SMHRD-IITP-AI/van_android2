@@ -67,7 +67,7 @@
                 <TextView
                     android:id="@+id/spe_p_1"
                     android:layout_width="300dp"
-                    android:layout_height="33dp"
+                    android:layout_height="0dp"
                     android:text="약이름약이름약이름(약이름약이름)"
                     android:textColor="#000000"
                     android:textSize="70px"

@@ -124,7 +124,7 @@ public class join extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "왜 안되요??????왜!!!", Toast.LENGTH_SHORT).show(); //error.toString()
+                //Toast.makeText(getApplicationContext(), "왜 안되요??????왜!!!", Toast.LENGTH_SHORT).show(); //error.toString()
                 error.printStackTrace();
             }
         }){
