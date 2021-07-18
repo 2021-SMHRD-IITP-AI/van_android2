@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Egeoyag" >
 <!--android:networkSecurityConfig="@xml/network_config"-->
-
+<!--왜 ㅜ -->
         <activity android:name=".favorites" />
         <activity android:name=".family" />
         <activity android:name=".user_record_modify" />
@@ -27,7 +27,6 @@
         <activity android:name=".search_pill_explanation" />
         <activity android:name=".search_pill_list" />
         <activity android:name=".main" />
-
         <activity android:name=".splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +40,6 @@
         <activity android:name=".subscription_information_check_email" />
         <activity android:name=".subscription_information" />
         <activity android:name=".join" />
-
         <activity android:name=".login" />
 
     </application>

@@ -26,11 +26,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class user_record_modify extends AppCompatActivity {
-    //  "https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151317976910600064"
-    //     1
-    //       199303109
-    // 현우님제발그만
-    //  나의증사아아앙아
+
     private String img;
     private String user_id;
     private String dnum;
@@ -78,6 +74,7 @@ public class user_record_modify extends AppCompatActivity {
 
         Intent intent = getIntent();//user_record_list에서 받아온 인텐트
         String urm_state = intent.getStringExtra("state");
+        Log.d("무슨인텐트", urm_state + "값있어?");
 
         if(urm_state.equals("팽팽")){//user_record_list에서 넘어왔을 때
 
@@ -101,7 +98,11 @@ public class user_record_modify extends AppCompatActivity {
         else{
             Intent intent_from_user_record = getIntent();
 
+
             urm_s_pimg = intent_from_user_record.getStringExtra("p_ur_img");
+
+            Log.d("인텐트", urm_s_pimg+"들어왔나용?");
+
             urm_s_pname = intent_from_user_record.getStringExtra("p_name");
             urm_s_pcompany = intent_from_user_record.getStringExtra("p_company");
             urm_s_potcetc = intent_from_user_record.getStringExtra("p_otcetc");
@@ -126,9 +127,9 @@ public class user_record_modify extends AppCompatActivity {
         task.execute();
 
 
-
-
         //Integer.parseInt();
+        Log.d("인텐트", urm_s_pname + "이름값이 있나용?");
+
 
         urm_pname.setText(urm_s_pname);
         urm_pcompany.setText(urm_s_pcompany);

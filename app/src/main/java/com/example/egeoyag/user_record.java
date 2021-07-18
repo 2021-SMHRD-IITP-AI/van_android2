@@ -97,7 +97,7 @@ public class user_record extends AppCompatActivity {
         date2 = findViewById(R.id.ur_date_end);
         mytime=findViewById(R.id.my_time);
         daybreak = findViewById(R.id.ur_takingtime1);
-        morning = findViewById(R.id.ur_takingtime1);
+        morning = findViewById(R.id.ur_takingtime2);
         afternoon = findViewById(R.id.ur_takingtime3);
         evening = findViewById(R.id.ur_takingtime4);
         midnight = findViewById(R.id.ur_takingtime5);
@@ -584,7 +584,7 @@ public class user_record extends AppCompatActivity {
                 params.put("user_myalartday", day.getText().toString());
                 params.put("user_id", user_id);
 
-                Log.v("약이름 값확인", p_n.getText().toString() + "확인");
+                Log.v("약이름 값확인 김효매 샌드리퀘스트", p_n.getText().toString() + "확인");
                 Log.v("약이미지 값확인", p_img + "확인");
                 Log.v("약번호 값확인", dnum+ "확인");
                 Log.v("유저아이디 값확인", user_id+ "확인");
@@ -666,7 +666,7 @@ public class user_record extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("drug_num", dnum);
+                params.put("drug_num", p_num);
                 params.put("drug_name", p_n.getText().toString());
                 params.put("otcetc", jun.getText().toString());
                 params.put("drug_group", p_group);

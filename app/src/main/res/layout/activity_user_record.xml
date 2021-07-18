@@ -182,19 +182,6 @@
                             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                         <TextView
-                            android:id="@+id/textView"
-                            android:layout_width="13dp"
-                            android:layout_height="74px"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginLeft="2dp"
-                            android:gravity="center"
-                            android:text="~"
-                            app:layout_constraintEnd_toStartOf="@+id/ur_date_end"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@+id/urm_date_start"
-                            app:layout_constraintTop_toTopOf="@+id/urm_date_start" />
-
-                        <TextView
                             android:id="@+id/ur_date_end"
                             android:layout_width="429px"
                             android:layout_height="74px"
@@ -203,7 +190,7 @@
                             android:layout_marginTop="96dp"
                             android:hint="날짜를 입력해주세요"
                             android:textSize="50px"
-                            app:layout_constraintStart_toEndOf="@+id/urm_date_start"
+                            app:layout_constraintStart_toEndOf="@+id/ur_date_start"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <EditText
@@ -259,19 +246,6 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/ur_date_endd"
-                            android:layout_width="429px"
-                            android:layout_height="74px"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="96dp"
-                            android:hint="날짜를 입력해주세요"
-                            android:textColor="#B4B2B2"
-                            android:textSize="50px"
-                            app:layout_constraintStart_toEndOf="@+id/ur_date_end"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -549,7 +523,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="429px" />
+                    app:layout_constraintGuide_begin="121dp" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline28"
