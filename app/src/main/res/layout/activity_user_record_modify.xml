@@ -5,10 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user_record_modify">
-    <!-- 툴바주석처리    <include-->
-    <!-- 툴바주석처리     layout="@layout/record_toolbar"-->
-    <!-- 툴바주석처리     android:id="@+id/record_toolbar" />-->
-    <!-- 파란색   #1F2A83-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Con1"
@@ -30,7 +26,6 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="나의 기록"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"

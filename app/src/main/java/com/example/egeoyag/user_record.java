@@ -50,13 +50,10 @@ import java.util.Locale;
 import java.util.Map;
 
 public class user_record extends AppCompatActivity {
-//    private String img ="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151317976910600064";
-//    private String user_id= "1";
+
     private String dnum= "";
     private String p_g = "";
-//    private String mysy = "나의증사아아앙아";
     private String data1, data2,dataA ,dataB, timeData, dateall, p_img_link;
-
     private String p_name, p_company, p_otcetc, p_group, p_img, p_num, p_user_id;
     private ImageView ur_p_img;
 
