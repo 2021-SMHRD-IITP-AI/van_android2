@@ -47,8 +47,8 @@ public class my_page extends AppCompatActivity {
 
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override//1차 프로젝트 때 사용 X
+    protected void onCreate(Bundle savedInstanceState) {//마이페이지 : 내 정보변경창으로 이동 버튼 + 내가 복용중인 약을 리스트 3개 출력
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_page);
 

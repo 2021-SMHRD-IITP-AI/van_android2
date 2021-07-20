@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class main extends AppCompatActivity {
+public class main extends AppCompatActivity {//메인(검색화면)
 
     private ListView l_lv;
 
@@ -47,6 +47,7 @@ public class main extends AppCompatActivity {
     private Button m_btn_1, m_btn_2, btn_backg;
     private ImageButton m_submit, m_hambuger, m_ham_1, m_ham_2, m_ham_3;
     private EditText m_edt_s;
+    //tb_n : 색깔 토글 버튼 , tb_s_n : 모양 토글 버튼, main_toggle : 이름/효능 검색 토글
     private ToggleButton tb_1, tb_2, tb_3, tb_4, tb_5, tb_6, tb_7, tb_8, tb_9, tb_10, tb_11, tb_12, tb_13, tb_14, tb_15, tb_16, main_toggle;
     private ToggleButton tb_s_1, tb_s_2, tb_s_3, tb_s_4, tb_s_5, tb_s_6, tb_s_7, tb_s_8, tb_s_9, tb_s_10;
     private FloatingActionButton m_f_btn;
@@ -54,7 +55,7 @@ public class main extends AppCompatActivity {
     private ConstraintLayout menu, l_hambuger, con_1, con_3;
     private PillListViewAdapter adapter = new PillListViewAdapter();
     int state_cnt = 0; // 색상/모양 버튼 누를 때 상태 파악
-    private String main_state;
+    private String main_state; // main_state 값 0 : 효능으로 검색, 1:이름으로 검색
 
     String img_pill;
     Bitmap bitmap;
@@ -77,7 +78,7 @@ public class main extends AppCompatActivity {
 
         initial();
         main_state = "1";
-
+        //색상/모양 on/off 여부 판단
         m_btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -512,6 +513,9 @@ public class main extends AppCompatActivity {
         });
 
 
+
+        //돋보기 모양 버튼 눌렀을 때 = 검색 시작
+        //스레드 시작 -> 해당 의약품 정보 API에서 파싱 후 출력
         m_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -521,6 +525,7 @@ public class main extends AppCompatActivity {
                 t = new Thread(new main.MyThread());
                 t.start();
 
+               //해당 의약품을 눌렀을 때 해당 의약품 상세화면으로 화면 전환
                 l_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -547,7 +552,7 @@ public class main extends AppCompatActivity {
             }
 
         });
-
+        //효능/이름 검색으로 선택
         main_toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -561,7 +566,7 @@ public class main extends AppCompatActivity {
             }
         });
 
-
+        //왼쪽 상단의 햄버거 버튼 눌렀을 때 메뉴 활성화/비활성화
         m_hambuger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -570,7 +575,7 @@ public class main extends AppCompatActivity {
 
             }
         });
-
+        //햄버거 메뉴가 나와있을 때 빈화면 누르면 메뉴창 닫기게 설정
         btn_backg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -579,6 +584,8 @@ public class main extends AppCompatActivity {
             }
         });
 
+
+        //햄버거 메뉴의 선택락 123(마이페이지, 가족, 즐겨찾기)
         m_ham_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -672,11 +679,11 @@ public class main extends AppCompatActivity {
                     adapter = new PillListViewAdapter();
 
 
-                    p_num = getPhilNumber();
+                    p_num = getPhilNumber(); // 검색한 내용으로 해당 의약품 일련번호 가져옴(여러 의약품 일련번호를 @ 로 구분)
 
-                    getphillnum = p_num.split("@");//일련번호 담아둠
+                    getphillnum = p_num.split("@");//getphillnum 배열에 @로 구분하여 일련번호 담기
 
-                    ArrayList<String> test = new ArrayList<String>();
+                    ArrayList<String> test = new ArrayList<String>(); //계속 0번째 인덱스 값 인식 못하고 렉걸려서 임의값 넣음
                     test.add("1234");
 
                     for (int i = 0; i < getphillnum.length; i++) {
@@ -694,9 +701,10 @@ public class main extends AppCompatActivity {
                 if (getphillnum[0].equals("1234")) {//getphillnum[0]은 "1234"
 
                         for (int i = 1; i < getphillnum.length; i++) {
+                            //getphillData1 : 일련번호로 낱알 API에서 정보 가져와서 txt에 담고 뿌린 뒤, 다음 일련번호 가져와서 반복
 
                             String txt = getPhillData1(getphillnum[i]); //getphillnum[i]의 정보를 txt에 저장(#으로 구분)
-                            if(txt.equals("")){i--;}
+                            if(txt.equals("")){i--;} // API 렉 걸릴 때 정보 못 가져와서, 가져올때까지 반복시킴
 
 
                             if (i > 0) {
@@ -715,9 +723,10 @@ public class main extends AppCompatActivity {
 
                                     ListPillDTO dto = new ListPillDTO(l_p_img, l_p_name, l_p_company, l_p_eff1, l_p_num);
 
-                                    DownloadFilesTask task = new DownloadFilesTask();
+                                    DownloadFilesTask task = new DownloadFilesTask(); //이미지 다운 시작 ~
                                     task.setItem(dto);
 
+                                    //모두 출력 후 인터럽트
                                     if(i == getphillnum.length-1){t.interrupt();Log.d("인터럽트","인터럽트");}
 
                                 }

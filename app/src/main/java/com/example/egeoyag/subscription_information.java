@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class subscription_information extends AppCompatActivity {
+public class subscription_information extends AppCompatActivity { //회원가입 두번째 화면(상세정보 기입하는 화면)
     private EditText edt_join_name,edt_join_pw,edt_join_pw_ch,edt_join_phone,edt_join_date;
     private RadioButton rd_sex_m,rd_sex_w;
     private Button btn_join;

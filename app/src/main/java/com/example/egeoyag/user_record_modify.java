@@ -25,7 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class user_record_modify extends AppCompatActivity {
+public class user_record_modify extends AppCompatActivity {//기록하기 화면(수정가능한 상태)
 
     private String img;
     private String user_id;
@@ -49,7 +49,7 @@ public class user_record_modify extends AppCompatActivity {
 
     Bitmap bitmap;
 
-    Button btn_send; //이거 진짜 꼭 좀 고치세요. btn가 왜 te죠?
+    Button btn_send;
 
 
 
@@ -75,6 +75,8 @@ public class user_record_modify extends AppCompatActivity {
 
         Intent intent = getIntent();//user_record_list에서 받아온 인텐트
         String urm_state = intent.getStringExtra("state");
+        //팽팽=user_record_list에서 넘어온 값
+        //응애=main - search_pill_explanation 에서 넘ㅇㅓ온 값
         Log.d("무슨인텐트", urm_state + "값있어?");
 
         if(urm_state.equals("팽팽")){//user_record_list에서 넘어왔을 때
@@ -149,7 +151,7 @@ public class user_record_modify extends AppCompatActivity {
 
 
 
-
+        //수정완료 버튼 누르면 기록내용 확인 화면으로 이동
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class join extends AppCompatActivity {
+public class join extends AppCompatActivity { //회원가입
     private EditText edt_join_email;
     private CheckBox cb_all,cb_servie_use,cb_service_in,cb_marketing,cb_ad;
     private Button btn_next;
@@ -47,6 +47,8 @@ public class join extends AppCompatActivity {
         cb_ad = findViewById(R.id.cb_ad);
         btn_next = findViewById(R.id.btn_next);
 
+
+        //전체동의 체크박스 눌렀을 때 모든 체크박스 체크/체크X
         cb_all.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -66,7 +68,7 @@ public class join extends AppCompatActivity {
             }
         });
 
-
+        //다음버튼 눌렀을 때, 공란 여부 확인 후 화면전환
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +96,7 @@ public class join extends AppCompatActivity {
         });
     }
 
+    //서버 전송 : ID값 중복 -> 토스트 메세지 출력, 중복 X -> 서버로 ID 전송 후 화면 전환
     public void sendRequest(){
         queue = Volley.newRequestQueue(this);
         String url = "http://59.0.249.28:300/EmailCheck";

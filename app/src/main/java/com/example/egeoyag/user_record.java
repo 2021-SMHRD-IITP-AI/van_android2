@@ -49,7 +49,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class user_record extends AppCompatActivity {
+public class user_record extends AppCompatActivity {//기록해둔 내용 확인 부분
+                // (main 에서 들어올 경우 : 입력 값 가져온 후 출력, user_record_list에서 들어올 경우 : 서버에서 정보 가져온 후 출력)
+                // main : intent - path 0,   user_record_list : intent - path 1
 
     private String dnum= "";
     private String p_g = "";
@@ -112,20 +114,16 @@ public class user_record extends AppCompatActivity {
 
         alarm_switch=findViewById(R.id.alarm_switch);
 
-        //효민이쪽에서 받아오는 인텐트
+        //path로 어느 화면에서 넘어왔는지 확인
+        //0 - main
+        //1 - user_record_list
         String path = getIntent().getStringExtra("path");
         Log.d("인텐트 확인", path + "타단");
         String p_otcetc,p_nae,p_weight,p_height,p_record,p_mytime,p_myday,p_user_time,p_user_date;
 
 
-        //네 그렇게 하셔야죠
-        //당연히 안되죠...아직 효민이꺼랑 연결이 안됬잖아....당연히 null이죠..
-        //효민이꺼 코드 받아 오셨어요? 아니요 그럼 아까 효민이가 무슨 코드 안 줬어용?
-        //코드가 무슨코드인지...?? 됐어요. 제가 물어볼게요.
-        //효민이가 보내는 코드는 어디겠어요. 리스트겠죠.
-
         if(path.equals("0")){
-            // 0은 효민이가 보내는 것이에요. 이해하셨으면 네 하세요네 효민이가 보내는것을 셋텍스 하시고
+            // 0 일경우 : main 에서 넘어 옴
             Intent intent = getIntent();
             p_name = intent.getStringExtra("intent_p_name");
             p_company = intent.getStringExtra("intent_p_company");
@@ -133,7 +131,7 @@ public class user_record extends AppCompatActivity {
             p_group = intent.getStringExtra("intent_p_group");
             p_img = intent.getStringExtra("intent_p_img");
             p_num = intent.getStringExtra("intent_p_num");
-            //받아오신 값을 셋텍스트 하세요.
+
             p_img_link = p_img;
             user_record.DownloadFilesTask task = new user_record.DownloadFilesTask();
             task.execute();
@@ -154,8 +152,7 @@ public class user_record extends AppCompatActivity {
             p_c.setText(p_company);
 
         }else {
-            //현우님이 보내느것 현우님쪽에서 뭐 보내거든요. 그
-            //받아오신 값을 셋텍스트 하세요. 그것도 하시면되요.
+            //path =1, user_record_list에서 값 가져오기
             Intent intent1 = getIntent();
 
             p_img = intent1.getStringExtra("p_arr_img");

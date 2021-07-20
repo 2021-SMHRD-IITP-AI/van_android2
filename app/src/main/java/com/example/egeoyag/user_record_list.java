@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class user_record_list extends AppCompatActivity {
+public class user_record_list extends AppCompatActivity {//유저가 복용중인 약 리스트 확인
 
     private  String []  taking_p_arr_img = new String[100];
     private String [] taking_p_arr_num = new String[100];
@@ -137,7 +137,7 @@ public class user_record_list extends AppCompatActivity {
         pillListView = findViewById(R.id.pillListView);
         adapter = new listviewadapter();
 
-        pillListView.setAdapter(adapter);            //이 부분이 리스트뷰 실행입니당  넹 일단 ppt 부분 해주세용~~~네네에에네에
+        pillListView.setAdapter(adapter);
         pillListView.setTextFilterEnabled(true);
 
         pillListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -205,7 +205,6 @@ public class user_record_list extends AppCompatActivity {
                         pillListView.setFilterText(edt_input.getText().toString());
                     }
 
-                    // 스노우볼 스노우볼 스노우볼
 
                     @Override
                     public void afterTextChanged(Editable s) {

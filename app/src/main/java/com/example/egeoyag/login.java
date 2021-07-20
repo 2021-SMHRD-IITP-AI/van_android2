@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class login extends AppCompatActivity {
+public class login extends AppCompatActivity {//로그인
     private EditText edt_email,edt_password;
     private Button btn_login, login_btn_join;
     private RequestQueue queue;
@@ -42,13 +42,14 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setContentView(R.layout.activity_login);
+
 
         edt_email = findViewById(R.id.edt_email);
         edt_password = findViewById(R.id.edt_password);
         btn_login = findViewById(R.id.btn_login);
         login_btn_join = findViewById(R.id.login_btn_join);
 
+        //로그인 버튼 눌렀을 때 서버로 값 전송
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +59,8 @@ public class login extends AppCompatActivity {
             }
         });
 
+
+        //회원가입 버튼 눌렀을 때, 회원가입 화면으로 전환
         login_btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +71,9 @@ public class login extends AppCompatActivity {
 
 
     }
+
+    //로그인 성공시 : JSONObject로 사용자 정보 서버에 넘김 + 메인 화면으로 화면전환
+    //      실패시 : 토스트 메세지 출력
     public void sendRequest(){
         queue = Volley.newRequestQueue(this);
         String url ="http://59.0.249.28:3000/Login";

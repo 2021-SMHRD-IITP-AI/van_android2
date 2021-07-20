@@ -47,7 +47,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class search_pill_explanation extends AppCompatActivity {
+public class search_pill_explanation extends AppCompatActivity {//메인에서 검색 후 의약품 리스트 중 하나를 눌렀을 때 해당의약품에 대한 설명화면
 
     private pillExAdapter adapter = new pillExAdapter();
 
@@ -79,6 +79,8 @@ public class search_pill_explanation extends AppCompatActivity {
 
         initial();
 
+
+        //전 화면(main) 에서 받아온 의약품 일련번호로 API에서 해당의약품에 관한 정보 호출
         Intent intent = getIntent();
         String intent_p_num = intent.getStringExtra("intent_p_num");
         Log.d("인탠트", intent_p_num);
@@ -87,7 +89,7 @@ public class search_pill_explanation extends AppCompatActivity {
         tt = new Thread(new MyThread2());
         tt.start();
 
-
+        //의약품 상세화면(주의사항 > 버튼 클릭 시)
         spe_btn_danger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +100,7 @@ public class search_pill_explanation extends AppCompatActivity {
             }
         });
 
+        //기록하기 버튼을 눌렀을 때 해당 정보 전송 후 화면 전환
         spe_btn_record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -202,6 +205,8 @@ public class search_pill_explanation extends AppCompatActivity {
         public void run() {
             while(!Thread.currentThread().isInterrupted()){
 
+
+                //API 렉 때문, 정보 못 가져오면 가져올 때 까지 반복
                 for(int i = 0; i<=1; i++){
                     p_data_not = getPhillData1(spe_p_num);
                     if(p_data_not.equals("")){i=0;}

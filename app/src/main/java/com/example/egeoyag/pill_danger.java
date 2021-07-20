@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class pill_danger extends AppCompatActivity {
+public class pill_danger extends AppCompatActivity {//해당 의약품의 주의사항 더보기 눌렀을 때 보이는 화면 의약품에 대한 상세상세 정보 출력
 
     private TextView pd_tv1, pd_tv2, pd_tv3, pd_tv4, pd_tv5;
     private Thread tt;
@@ -35,6 +35,8 @@ public class pill_danger extends AppCompatActivity {
 
         initial();
 
+
+        //전 화면(search_pill_explanation)에서 의약품 일련번호를 가져와 api에서 해당 의약품 정보 호출 후 출력
         Intent intent = getIntent();
         String intent_p_num = intent.getStringExtra("intent_p_num");
         pd_pnum = intent_p_num;
@@ -67,7 +69,7 @@ public class pill_danger extends AppCompatActivity {
                 for(int i = 0 ; i< arr.length ; i++){
                     Log.d("순서확인", arr[i]);//순서확인하고 정리하기
                 }
-                if(arr[0].equals("")){
+                if(arr[0].equals("")){ //정보가 부족한 의약품 NULL 값 처리
                     pd_info1 = "정보가 부족합니다.";
                     pd_info2 = "정보가 부족합니다.";
                     pd_info3 = "정보가 부족합니다.";
